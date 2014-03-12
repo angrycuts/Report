@@ -140,7 +140,8 @@ $a_y(t) = a_{out}(t) * sin(\theta_i(t)) - g$ \hfill (4) \\
 
  
 \subsection{Air resistance}
-To add air resistance to the model, the velocity should be reduced according to the angle perpendicular to the gravity. The air resistance (5) takes into account the density of air, the drag coefficient of a sphere, the cross sectional area and the velocity of the weight.\\ \\
+To add air resistance to the model, the velocity should be reduced according to the angle perpendicular to the gravity. The air resistance (5) was calculated using the density of air ${\rho}$, the drag coefficient of a sphere $c_d$, the cross sectional area {\itshape A}  of the object and the velocity, $v$ of the weight.
+The air resistance was added to affect the velocity decreasingly which was performed by appending the $F_d$ to $v_y$ in (3).\\ \\
 $F_d = \frac{1}{2}( \rho * v^2(t) * c_{d} * A)$ \hfill (5) 
 
 \subsection{Collision detection}
