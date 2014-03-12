@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2014.2.26)  12 MAR 2014 12:14
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2014.2.26)  12 MAR 2014 15:04
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -205,19 +205,19 @@ No file report.bbl.
 (./report.aux)
 \openout1 = `report.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 42.
-LaTeX Font Info:    ... okay on input line 42.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 42.
-LaTeX Font Info:    ... okay on input line 42.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 42.
-LaTeX Font Info:    ... okay on input line 42.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 42.
-LaTeX Font Info:    ... okay on input line 42.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 42.
-LaTeX Font Info:    ... okay on input line 42.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 42.
-LaTeX Font Info:    ... okay on input line 42.
-LaTeX Font Info:    Try loading font information for OT1+ptm on input line 42.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 45.
+LaTeX Font Info:    ... okay on input line 45.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 45.
+LaTeX Font Info:    ... okay on input line 45.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 45.
+LaTeX Font Info:    ... okay on input line 45.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 45.
+LaTeX Font Info:    ... okay on input line 45.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 45.
+LaTeX Font Info:    ... okay on input line 45.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 45.
+LaTeX Font Info:    ... okay on input line 45.
+LaTeX Font Info:    Try loading font information for OT1+ptm on input line 45.
  (/usr/local/texlive/2013/texmf-dist/tex/latex/psnfss/ot1ptm.fd
 File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
 )
@@ -289,19 +289,19 @@ Package caption Info: End \AtBeginDocument code.
 File: bilder/LiTH_sigill_col.png Graphic file (type png)
 
 <use bilder/LiTH_sigill_col.png>
-Package pdftex.def Info: bilder/LiTH_sigill_col.png used on input line 50.
+Package pdftex.def Info: bilder/LiTH_sigill_col.png used on input line 53.
 (pdftex.def)             Requested size: 170.71652pt x 170.56929pt.
-LaTeX Font Info:    Try loading font information for U+msa on input line 54.
+LaTeX Font Info:    Try loading font information for U+msa on input line 57.
 
 (/usr/local/texlive/2013/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 54.
+LaTeX Font Info:    Try loading font information for U+msb on input line 57.
 
 (/usr/local/texlive/2013/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Try loading font information for U+lasy on input line 54.
+LaTeX Font Info:    Try loading font information for U+lasy on input line 57.
 
 (/usr/local/texlive/2013/texmf-dist/tex/latex/base/ulasy.fd
 File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
@@ -310,32 +310,32 @@ File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
 {/usr/local/texlive/2013/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <./bilde
 r/LiTH_sigill_col.png>]
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10.95> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 58.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 61.
  [2]
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <17.28> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 78.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 81.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <14.4> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 79.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 82.
  <bilder/ideasketch.png, id=14, 616.55344pt x 222.8325pt>
 File: bilder/ideasketch.png Graphic file (type png)
 
 <use bilder/ideasketch.png>
-Package pdftex.def Info: bilder/ideasketch.png used on input line 87.
+Package pdftex.def Info: bilder/ideasketch.png used on input line 90.
 (pdftex.def)             Requested size: 275.53668pt x 99.58464pt.
 
 <bilder/Matlab_Pendulum1.png, id=15, 422.32782pt x 332.74312pt>
 File: bilder/Matlab_Pendulum1.png Graphic file (type png)
 
 <use bilder/Matlab_Pendulum1.png>
-Package pdftex.def Info: bilder/Matlab_Pendulum1.png used on input line 92.
+Package pdftex.def Info: bilder/Matlab_Pendulum1.png used on input line 95.
 (pdftex.def)             Requested size: 144.44662pt x 113.81102pt.
  [1 <./bilder/ideasketch.png> <./bilder/Matlab_Pendulum1.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 107--109
+Underfull \hbox (badness 10000) in paragraph at lines 110--112
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 107--109
+Underfull \hbox (badness 10000) in paragraph at lines 110--112
 
  []
 
@@ -343,15 +343,15 @@ Underfull \hbox (badness 10000) in paragraph at lines 107--109
 File: bilder/pendulum_2.png Graphic file (type png)
 
 <use bilder/pendulum_2.png>
-Package pdftex.def Info: bilder/pendulum_2.png used on input line 112.
+Package pdftex.def Info: bilder/pendulum_2.png used on input line 115.
 (pdftex.def)             Requested size: 41.72675pt x 85.35826pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 119--123
+Underfull \hbox (badness 10000) in paragraph at lines 122--126
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 119--123
+Underfull \hbox (badness 10000) in paragraph at lines 122--126
 
  []
 
@@ -359,205 +359,215 @@ Underfull \hbox (badness 10000) in paragraph at lines 119--123
 File: bilder/projectile_dynamics.png Graphic file (type png)
 
 <use bilder/projectile_dynamics.png>
-Package pdftex.def Info: bilder/projectile_dynamics.png used on input line 126.
+Package pdftex.def Info: bilder/projectile_dynamics.png used on input line 129.
 
 (pdftex.def)             Requested size: 64.30493pt x 85.35826pt.
  [2 <./bilder/pendulum_2.png> <./bilder/projectile_dynamics.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 133--135
+Underfull \hbox (badness 10000) in paragraph at lines 136--138
 
  []
 
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 140.
 <bilder/pythagora.png, id=33, 190.7125pt x 135.50626pt>
 File: bilder/pythagora.png Graphic file (type png)
 
 <use bilder/pythagora.png>
-Package pdftex.def Info: bilder/pythagora.png used on input line 147.
+Package pdftex.def Info: bilder/pythagora.png used on input line 152.
 (pdftex.def)             Requested size: 124.14206pt x 88.2037pt.
 
 <bilder/Collision_management.png, id=34, 721.2546pt x 305.2203pt>
 File: bilder/Collision_management.png Graphic file (type png)
 
 <use bilder/Collision_management.png>
-Package pdftex.def Info: bilder/Collision_management.png used on input line 153
+Package pdftex.def Info: bilder/Collision_management.png used on input line 158
 .
 (pdftex.def)             Requested size: 215.14543pt x 91.04872pt.
- [3 <./bilder/pythagora.png> <./bilder/Collision_management.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 162--165
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 167--170
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 162--165
+Underfull \hbox (badness 10000) in paragraph at lines 167--170
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 162--165
+Underfull \hbox (badness 10000) in paragraph at lines 167--170
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 162--165
+Underfull \hbox (badness 10000) in paragraph at lines 167--170
 
  []
 
-<bilder/collisionplane.png, id=41, 157.58875pt x 115.43124pt>
+<bilder/collisionplane.png, id=35, 157.58875pt x 115.43124pt>
 File: bilder/collisionplane.png Graphic file (type png)
 
 <use bilder/collisionplane.png>
-Package pdftex.def Info: bilder/collisionplane.png used on input line 169.
+Package pdftex.def Info: bilder/collisionplane.png used on input line 176.
 (pdftex.def)             Requested size: 116.53207pt x 85.35826pt.
 
-<bilder/newvelocitiesvectors_new.png, id=42, 366.36874pt x 343.2825pt>
+<bilder/newvelocitiesvectors_new.png, id=36, 366.36874pt x 343.2825pt>
 File: bilder/newvelocitiesvectors_new.png Graphic file (type png)
 
 <use bilder/newvelocitiesvectors_new.png>
 Package pdftex.def Info: bilder/newvelocitiesvectors_new.png used on input line
- 175.
+ 182.
 (pdftex.def)             Requested size: 91.09442pt x 85.35826pt.
 
-Overfull \hbox (23.99998pt too wide) in paragraph at lines 167--180
+Overfull \hbox (23.99998pt too wide) in paragraph at lines 174--187
 [][] 
  []
 
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 183.
 
-Underfull \hbox (badness 10000) in paragraph at lines 184--186
-
- []
+LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 184--186
+Underfull \hbox (badness 10000) in paragraph at lines 191--193
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 189--194
+Underfull \hbox (badness 10000) in paragraph at lines 191--193
+
+ []
+
+[3]
+Underfull \hbox (badness 10000) in paragraph at lines 196--201
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 189--194
+Underfull \hbox (badness 10000) in paragraph at lines 196--201
 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 195--197
+[4 <./bilder/pythagora.png> <./bilder/Collision_management.png> <./bilder/colli
+sionplane.png> <./bilder/newvelocitiesvectors_new.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 202--204
 
  []
 
-[4 <./bilder/collisionplane.png> <./bilder/newvelocitiesvectors_new.png>]
 File: bilder/Matlab_Pendulum1.png Graphic file (type png)
-
 <use bilder/Matlab_Pendulum1.png>
-Package pdftex.def Info: bilder/Matlab_Pendulum1.png used on input line 208.
+Package pdftex.def Info: bilder/Matlab_Pendulum1.png used on input line 215.
 (pdftex.def)             Requested size: 170.71652pt x 134.50635pt.
 
-<bilder/Matlab_Pendulum2.png, id=49, 422.32782pt x 311.66437pt>
+<bilder/Matlab_Pendulum2.png, id=48, 422.32782pt x 311.66437pt>
 File: bilder/Matlab_Pendulum2.png Graphic file (type png)
 
 <use bilder/Matlab_Pendulum2.png>
-Package pdftex.def Info: bilder/Matlab_Pendulum2.png used on input line 215.
+Package pdftex.def Info: bilder/Matlab_Pendulum2.png used on input line 222.
 (pdftex.def)             Requested size: 170.71652pt x 125.9856pt.
 
-Overfull \hbox (23.99998pt too wide) in paragraph at lines 206--221
+Overfull \hbox (23.99998pt too wide) in paragraph at lines 213--228
  [][] 
  []
 
-<bilder/OpenGL_pendulum0.png, id=50, 782.925pt x 605.26125pt>
+<bilder/OpenGL_pendulum0.png, id=49, 782.925pt x 605.26125pt>
 File: bilder/OpenGL_pendulum0.png Graphic file (type png)
 
 <use bilder/OpenGL_pendulum0.png>
-Package pdftex.def Info: bilder/OpenGL_pendulum0.png used on input line 234.
+Package pdftex.def Info: bilder/OpenGL_pendulum0.png used on input line 241.
 (pdftex.def)             Requested size: 170.71652pt x 131.97572pt.
 
-<bilder/OpenGL_bounce0.png, id=51, 389.20406pt x 179.92218pt>
+<bilder/OpenGL_bounce0.png, id=50, 389.20406pt x 179.92218pt>
 File: bilder/OpenGL_bounce0.png Graphic file (type png)
 
 <use bilder/OpenGL_bounce0.png>
-Package pdftex.def Info: bilder/OpenGL_bounce0.png used on input line 241.
+Package pdftex.def Info: bilder/OpenGL_bounce0.png used on input line 248.
 (pdftex.def)             Requested size: 170.71652pt x 78.92166pt.
 
-Overfull \hbox (23.99998pt too wide) in paragraph at lines 232--246
+Overfull \hbox (23.99998pt too wide) in paragraph at lines 239--253
  [][] 
  []
 
-[5 <./bilder/Matlab_Pendulum2.png> <./bilder/OpenGL_pendulum0.png> <./bilder/Op
-enGL_bounce0.png>]
-<bilder/OpenGL_pendulum1.png, id=59, 570.63188pt x 430.60875pt>
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+Underfull \vbox (badness 1147) has occurred while \output is active []
+
+ [5 <./bilder/Matlab_Pendulum2.png>]
+<bilder/OpenGL_pendulum1.png, id=56, 570.63188pt x 430.60875pt>
 File: bilder/OpenGL_pendulum1.png Graphic file (type png)
 
 <use bilder/OpenGL_pendulum1.png>
-Package pdftex.def Info: bilder/OpenGL_pendulum1.png used on input line 255.
+Package pdftex.def Info: bilder/OpenGL_pendulum1.png used on input line 262.
 (pdftex.def)             Requested size: 170.71652pt x 128.82224pt.
 
-<bilder/OpenGL_bounce1.png, id=60, 537.50812pt x 402.75468pt>
+<bilder/OpenGL_bounce1.png, id=57, 537.50812pt x 402.75468pt>
 File: bilder/OpenGL_bounce1.png Graphic file (type png)
 
 <use bilder/OpenGL_bounce1.png>
-Package pdftex.def Info: bilder/OpenGL_bounce1.png used on input line 261.
+Package pdftex.def Info: bilder/OpenGL_bounce1.png used on input line 268.
 (pdftex.def)             Requested size: 170.71652pt x 127.91928pt.
 
-Overfull \hbox (23.99998pt too wide) in paragraph at lines 253--266
+Overfull \hbox (23.99998pt too wide) in paragraph at lines 260--273
  [][] 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 285--295
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 285--295
+[6 <./bilder/OpenGL_pendulum0.png> <./bilder/OpenGL_bounce0.png> <./bilder/Open
+GL_pendulum1.png> <./bilder/OpenGL_bounce1.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 292--302
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 285--295
+Underfull \hbox (badness 10000) in paragraph at lines 292--302
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 285--295
+Underfull \hbox (badness 10000) in paragraph at lines 292--302
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 285--295
+Underfull \hbox (badness 10000) in paragraph at lines 292--302
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 285--295
+Underfull \hbox (badness 10000) in paragraph at lines 292--302
 
  []
 
-[6 <./bilder/OpenGL_pendulum1.png> <./bilder/OpenGL_bounce1.png>] [7] [1]
-(./report.aux) ) 
+
+Underfull \hbox (badness 10000) in paragraph at lines 292--302
+
+ []
+
+[7] [1] (./report.aux) ) 
 Here is how much of TeX's memory you used:
  4203 strings out of 493315
  62473 string characters out of 6137904
- 125732 words of memory out of 5000000
+ 127734 words of memory out of 5000000
  7545 multiletter control sequences out of 15000+600000
  26555 words of font info for 68 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
- 42i,13n,40p,852b,448s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/local/texlive/2013/texmf-dist/fonts/enc/dvips/base/8r.enc
-}</usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb>
-</usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></
-usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></us
-r/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/l
-ocal/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/loca
-l/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local
-/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/t
-exlive/2013/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/201
-3/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2013/texmf-di
-st/fonts/type1/urw/times/utmri8a.pfb>
-Output written on report.pdf (10 pages, 416737 bytes).
+ 42i,13n,40p,830b,450s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/local/texlive/2013/texmf-dist/fonts/enc/dvips/bas
+e/8r.enc}</usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmm
+i12.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi
+8.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.
+pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb
+></usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
+</usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></
+usr/local/texlive/2013/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/
+texlive/2013/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/20
+13/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on report.pdf (10 pages, 416298 bytes).
 PDF statistics:
- 104 PDF objects out of 1000 (max. 8388607)
- 56 compressed objects within 1 object stream
+ 100 PDF objects out of 1000 (max. 8388607)
+ 53 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  71 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -39,6 +39,9 @@
 \author{Anton Alb\`{e}rt Karlstr\"{o}m, Lovisa Dahl, \\Emma Edvardsson
  and Hannes Ingelhag, \\Norrk\"{o}ping}
 
+%Gör så att alla formler blir lite större
+\everymath{\displaystyle}
+
 \begin{document}
 
 %\pagestyle{empty}
@@ -80,7 +83,7 @@ Write an abstract here!
 Angry cuts is a project of modeling and simulating the scenario of a weight attached to a pendulum converted into a projectile in two dimensions. 
 The final concept is a simulation of several weights, each attached to a pendulum. All the ropes are cut at the same time which results in a projectile movement for all the weights. In this state the weights interact with both the walls and each other.
 
-\textit{Figure 1} shows the first idea, where a pendulum was supposed to hit a tower of wooden bars. The projectile movement is inspired by the slingshot aiming towards a given target in the game {\itshape Angry birds}. The idea of releasing a weight from a pendulum is claimed from {\itshape Cut the rope}. In order to create a scene with real physics, the collisions in the scene require careful calculation of the collisions, both with static and dynamic objects. Since objects in equilibrium are difficult to handle in simulation, the idea was modified to have the weights alone acting in a room with walls and floor, and extend with several balls instead of the wooden bars. The definitive idea can be seen in \textit{figure 2}, the scene consists of a pendulum in a room, which later will be released as a projectile.
+Fig. 1 shows the first idea, where a pendulum was supposed to hit a tower of wooden bars. The projectile movement is inspired by the slingshot aiming towards a given target in the game {\itshape Angry birds}. The idea of releasing a weight from a pendulum is claimed from {\itshape Cut the rope}. In order to create a scene with real physics, the collisions in the scene require careful calculation of the collisions, both with static and dynamic objects. Since objects in equilibrium are difficult to handle in simulation, the idea was modified to have the weights alone acting in a room with walls and floor, and extend with several balls instead of the wooden bars. The definitive idea can be seen in Fig. 2, the scene consists of a pendulum in a room, which later will be released as a projectile.
 
 
 \begin{figure}[h]
@@ -105,7 +108,7 @@ Another purpose with this project is to use Matlab to test and develop the model
 The first part of this project was to find the physical description of the first two parts of the model: the pendulum and the projectile movement. The second part was to implement collision handler and air resistance. 
 \subsection{Pendulum}
 A physical model of a nonlinear pendulum (1) is required since the system operates with large angles. \\ \\
-$\frac{d^2\theta}{dt^2} + \frac{g}{L}*sin(\theta) = 0$ \hfill (1) \\ 
+$\frac{d^2\theta}{dt^2} + \frac{g}{L}*sin(\theta(t)) = 0$ \hfill (1) \\ 
 
 \begin{figure}[h]
 \centering
@@ -113,13 +116,13 @@ $\frac{d^2\theta}{dt^2} + \frac{g}{L}*sin(\theta) = 0$ \hfill (1) \\
 \caption{Physical model of a pendulum}
 \end{figure}
 
-As can be seen in \textit{figure 3}, $g$ describes the gravity constant, $L$ the length of the rope of the pendulum and $\theta$ is the angle of the pendulum perpendicular to the gravity.  $\frac{d^2\theta}{dt^2}$, the angular acceleration, is the relationship between the length of the rope and the angle perpendicular to the direction of the gravity. 
+As can be seen in Fig. 3, $g$ describes the gravity constant, $L$ the length of the rope of the pendulum and $\theta$ is the angle of the pendulum perpendicular to the gravity.  $\frac{d^2\theta}{dt^2}$, the angular acceleration, is the relationship between the length of the rope and the angle perpendicular to the direction of the gravity. 
 
 \subsection{Projectile}
 The initial velocity of the projectile was retrieved from the velocity of the weight when the rope is cut. In order to transfer the movement into projectile, the velocity was split into horizontal (2) and vertical velocity (3). Besides the initial velocity from the pendulum the gravity was taken into account, which effects the vertical acceleration (4). \\ \\
-$v_x = \omega * cos(\theta_i)$ \hfill (2) \\
-$v_y = \omega * sin(\theta_i)$ \hfill (3) \\
-$a_y(t) = \alpha * sin(\theta_i) - g$ \hfill (4) \\
+$v_x(t) = \omega(t) * cos(\theta_i(t))$ \hfill (2) \\
+$v_y(t) = \omega(t) * sin(\theta_i(t))$ \hfill (3) \\
+$a_y(t) = \alpha(t) * sin(\theta_i(t)) - g$ \hfill (4) \\
 
 \begin{figure}[h]
 \centering
@@ -127,18 +130,20 @@ $a_y(t) = \alpha * sin(\theta_i) - g$ \hfill (4) \\
 \caption{Dynamics of the projectile}
 \end{figure}
 
- $\theta_i $ denotes the initial angle, $\omega$ is the angular velocity and $\alpha$ the angular acceleration of the pendulum.\textit{Figure 4} describes the initial condition of the projectile movement.
+ $\theta_i $ denotes the initial angle, $\omega$ is the angular velocity and $\alpha$ the angular acceleration of the pendulum. Fig. 4 describes the initial condition of the projectile movement.
  
 \subsection{Air resistance}
 To add air resistance to the model, the velocity should be reduced according to the angle perpendicular to the gravity. The air resistance (5) takes into account the density of air, the drag coefficient of a sphere, the cross sectional area and the velocity of the weight.\\ \\
-$F_{d} = \frac{1}{2}( \rho * v^2 * c_{d} * A)$ \hfill (5) 
+$F_d = \frac{1}{2}( \rho * v^2(t) * c_{d} * A)$ \hfill (5) 
 
 \subsection{Collision detection}
-The second part of the model was to consider the collisions: with walls and floor. This was performed by changing the direction after the collision according to the normal of the surface hit by the weight. The velocity was reduced with a factor to simulate an energy loss from the collision.
+\subsubsection{Collision with walls and floor}
+The second part of the model was to consider the collisions with walls and floor. This was performed by changing the direction after the collision according to the normal of the surface hit by the weight. The velocity was reduced with 20\%  to simulate an energy loss from the collision.
 
+\subsubsection{Collision between objects}
 The third physical part in the system was collision between two moving objects. In this project all collisions are considered elastic, which means that the objects cannot stick together in the collision.
-A collision is detected when the distance between two weights is smaller than the sum of the radii. The distances can be calculated using Pythagorean theorem, illustrated in {\itshape figure 5}. 
-Since a numerical method is used to calculate the next step of the scene, the weights might overlap and due to that get stuck to each other, an unwanted phenomena. To get a more realistic simulation of the collision, the boundaries of the weights must intersect instead of overlap. Therefore, when a collision is detected, the weights are set to their previous positions and from there smaller steps in the same direction are taken until they intersect, {\itshape figure 6}. 
+A collision is detected when the distance between two weights is smaller than the sum of the radii. The distances can be calculated using Pythagorean theorem, illustrated in Fig. 5. 
+Since a numerical method is used to calculate the next step of the scene, the weights might overlap, step 1 Fig. 6, and due to that get stuck to each other, an unwanted phenomena. To get a more realistic simulation of the collision, the boundaries of the weights must intersect instead of overlap. Therefore, when a collision is detected, the weights are set to their previous positions, step 2 Fig. 6, and from there smaller steps in the same direction are taken until they intersect, Fig. 6. 
 
 \begin{table}[h!]
   \centering
@@ -157,11 +162,13 @@ Since a numerical method is used to calculate the next step of the scene, the we
     \end{tabular}
 \end{table}
 
-To calculate the direction of the weights after the collision, the normal plane of the weights is used. This can be determined as the distance between center points of the weights. A collision plane is calculated by the normal plane, as illustrated in {\itshape figure 7}. 
+To calculate the direction of the weights after the collision, the normal plane of the weights is used. This can be determined as the distance between center points of the weights. A collision plane is calculated by the normal plane, as illustrated in Fig. 7. 
 
-The initial velocity vectors can now be described in the normal- and the collision plane, {\itshape figure 8}. These vectors can be obtained by the operation vector dot product. When these vectors are found the new veloctiy vector after the collision can be determined according to 6 and 7.  \\ \\
-$ v_{1a} = \frac{1}{m_1+m_2}(v_1(m_1-m_2) + 2m_2*v_2) $ \hfill (6) \\ \\
-$ v_{2a} = \frac{1}{m_1+m_2} (v_2(m_2-m_1) + 2m_1*v_1)$ \hfill (7) \\ \\
+The initial velocity vectors can now be described in the normal- and the collision plane, Fig 8. These vectors can be obtained by the operation vector dot product. When these vectors are found the new velocity vector after the collision can be determined according to 6 and 7.  \\ \\
+$ v_{1a}(t) = \frac{1}{m_1+m_2}*(v_1(t)(m_1-m_2) + 2m_2*v_2(t)) $ \hfill (6) \\ \\
+$ v_{2a}(t) = \frac{1}{m_1+m_2}*(v_2(t)(m_2-m_1) + 2m_1*v_1(t))$ \hfill (7) \\ \\
+
+$v_{1a}(t)$ and $v_{2a}(t)$ denotes the velocity of the weights, respectively, after the collision, $m_1$ and $m_2$ describes the masses of the colliding weights. $v_1$ and $v_2$ are the velocities of the weights before the collision. 
 
 \begin{table}[h!]
   \begin{tabular}{c c}
@@ -197,9 +204,9 @@ $ y(i+1) = y(i) + \frac{1}{6}( k_1 + 2*k_2 + 2*k_3 + k_4) $ \hfill (10)
 
 \subsection{Graphical implementation}
 \subsubsection{MATLAB}
-A physical model of one weight was defined and implemented in MATLAB for a simulation test. Constants for the calculations can be found in \textit{Appendix 1}. This was made iteratively, starting with the pendulum alone followed by adding the projectile movement and the last step with collision detection with static objects. The final simulation consisted of a weight attached to a pendulum, see \textit{figure 9}, which was released after a given time and converted into a projectile. The weight would bounce on the walls and the ground until the added energy loss caused it to stop moving. 
+A physical model of one weight was defined and implemented in MATLAB for a simulation test. Constants for the calculations can be found in \textit{Appendix 1}. This was made iteratively, starting with the pendulum alone followed by adding the projectile movement and the last step with collision detection with static objects. The final simulation consisted of a weight attached to a pendulum, see Fig. 9, which was released after a given time and converted into a projectile. The weight would bounce on the walls and the ground until the added energy loss caused it to stop moving. 
 
-The second part was to add interaction between two weights in the same room. This step required a fully working model of one weight and an additional collision management to handle collision between two dynamic objects. \textit{Figure 10} shows two weights of different radii.
+The second part was to add interaction between two weights in the same room. This step required a fully working model of one weight and an additional collision management to handle collision between two dynamic objects. Fig. 10 shows two weights of different radii.
 
 \begin{table}[h!]
   \centering
@@ -225,7 +232,7 @@ The second part was to add interaction between two weights in the same room. Thi
 \subsubsection{OpenGL 3.3}
 To improve the graphical representation of the model the code was converted to C++ and OpenGL. The software used in the project were Sublime Text 2, Visual Studio and CMake. 
 
-A possibility to change the number of weights in the scene was implemented, in such way that the pendulums were drawn with even intervals according to the number of weights. \textit{Figure 11} and \textit{12} presents the scene with three weights in OpenGL. The constants used for these figures are the same as previous.
+A possibility to change the number of weights in the scene was implemented, in such way that the pendulums were drawn with even intervals according to the number of weights. Fig. 11 and Fig. 12 presents the scene with three weights in OpenGL. The constants used for these figures are the same as previous.
 
 \begin{table}[h!]
   \centering
@@ -246,7 +253,7 @@ A possibility to change the number of weights in the scene was implemented, in s
 \end{table}
 
 \section{Result}
-The result retrieved from this project is a program where the user could enter the desired number of pendulums in a GUI. The trigger of movement for the pendulums are their initial angle given by the user or in program. During the execution of the program the user could follow the flow of energy in the scene. The weights are positioned depending on the given number and are set to a random color. In \textit{figure 13} and \textit{14} seven weights are implemented.
+The result retrieved from this project is a program where the user could enter the desired number of pendulums in a GUI. The trigger of movement for the pendulums are their initial angle given by the user or in program. During the execution of the program the user could follow the flow of energy in the scene. The weights are positioned depending on the given number and are set to a random color. In Fig. 13 and Fig. 14 seven weights are implemented.
 
 \begin{table}[h!]
   \centering
