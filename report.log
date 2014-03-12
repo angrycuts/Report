@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2014.2.26)  12 MAR 2014 15:04
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2014.3.5)  12 MAR 2014 16:54
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -330,12 +330,7 @@ File: bilder/Matlab_Pendulum1.png Graphic file (type png)
 Package pdftex.def Info: bilder/Matlab_Pendulum1.png used on input line 95.
 (pdftex.def)             Requested size: 144.44662pt x 113.81102pt.
  [1 <./bilder/ideasketch.png> <./bilder/Matlab_Pendulum1.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 110--112
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 110--112
+Underfull \hbox (badness 10000) in paragraph at lines 110--113
 
  []
 
@@ -343,44 +338,52 @@ Underfull \hbox (badness 10000) in paragraph at lines 110--112
 File: bilder/pendulum_2.png Graphic file (type png)
 
 <use bilder/pendulum_2.png>
-Package pdftex.def Info: bilder/pendulum_2.png used on input line 115.
-(pdftex.def)             Requested size: 41.72675pt x 85.35826pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 122--126
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 122--126
-
- []
+Package pdftex.def Info: bilder/pendulum_2.png used on input line 118.
+(pdftex.def)             Requested size: 83.4535pt x 170.71652pt.
 
 <bilder/projectile_dynamics.png, id=22, 162.6075pt x 215.8464pt>
 File: bilder/projectile_dynamics.png Graphic file (type png)
 
 <use bilder/projectile_dynamics.png>
-Package pdftex.def Info: bilder/projectile_dynamics.png used on input line 129.
+Package pdftex.def Info: bilder/projectile_dynamics.png used on input line 125.
 
-(pdftex.def)             Requested size: 64.30493pt x 85.35826pt.
- [2 <./bilder/pendulum_2.png> <./bilder/projectile_dynamics.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 136--138
+(pdftex.def)             Requested size: 128.60986pt x 170.71652pt.
+
+Overfull \hbox (23.99998pt too wide) in paragraph at lines 116--131
+ [][] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 134--139
 
  []
 
+
+Underfull \hbox (badness 10000) in paragraph at lines 134--139
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 143--145
+
+ []
+
+[2 <./bilder/pendulum_2.png> <./bilder/projectile_dynamics.png>]
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 140.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 147.
+
 <bilder/pythagora.png, id=33, 190.7125pt x 135.50626pt>
 File: bilder/pythagora.png Graphic file (type png)
 
 <use bilder/pythagora.png>
-Package pdftex.def Info: bilder/pythagora.png used on input line 152.
+Package pdftex.def Info: bilder/pythagora.png used on input line 159.
 (pdftex.def)             Requested size: 124.14206pt x 88.2037pt.
 
 <bilder/Collision_management.png, id=34, 721.2546pt x 305.2203pt>
 File: bilder/Collision_management.png Graphic file (type png)
 
 <use bilder/Collision_management.png>
-Package pdftex.def Info: bilder/Collision_management.png used on input line 158
+Package pdftex.def Info: bilder/Collision_management.png used on input line 165
 .
 (pdftex.def)             Requested size: 215.14543pt x 91.04872pt.
 
@@ -388,22 +391,22 @@ Package pdftex.def Info: bilder/Collision_management.png used on input line 158
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 167--170
+Underfull \hbox (badness 10000) in paragraph at lines 174--177
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 167--170
+Underfull \hbox (badness 10000) in paragraph at lines 174--177
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 167--170
+Underfull \hbox (badness 10000) in paragraph at lines 174--177
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 167--170
+Underfull \hbox (badness 10000) in paragraph at lines 174--177
 
  []
 
@@ -411,7 +414,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 167--170
 File: bilder/collisionplane.png Graphic file (type png)
 
 <use bilder/collisionplane.png>
-Package pdftex.def Info: bilder/collisionplane.png used on input line 176.
+Package pdftex.def Info: bilder/collisionplane.png used on input line 183.
 (pdftex.def)             Requested size: 116.53207pt x 85.35826pt.
 
 <bilder/newvelocitiesvectors_new.png, id=36, 366.36874pt x 343.2825pt>
@@ -419,10 +422,10 @@ File: bilder/newvelocitiesvectors_new.png Graphic file (type png)
 
 <use bilder/newvelocitiesvectors_new.png>
 Package pdftex.def Info: bilder/newvelocitiesvectors_new.png used on input line
- 182.
+ 189.
 (pdftex.def)             Requested size: 91.09442pt x 85.35826pt.
 
-Overfull \hbox (23.99998pt too wide) in paragraph at lines 174--187
+Overfull \hbox (23.99998pt too wide) in paragraph at lines 181--194
 [][] 
  []
 
@@ -430,44 +433,47 @@ Overfull \hbox (23.99998pt too wide) in paragraph at lines 174--187
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 191--193
+Underfull \hbox (badness 10000) in paragraph at lines 198--200
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 191--193
-
- []
-
-[3]
-Underfull \hbox (badness 10000) in paragraph at lines 196--201
+Underfull \hbox (badness 10000) in paragraph at lines 198--200
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 196--201
+Underfull \vbox (badness 2027) has occurred while \output is active []
+
+ [3]
+Underfull \hbox (badness 10000) in paragraph at lines 203--208
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 203--208
 
  []
 
 [4 <./bilder/pythagora.png> <./bilder/Collision_management.png> <./bilder/colli
 sionplane.png> <./bilder/newvelocitiesvectors_new.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 202--204
+Underfull \hbox (badness 10000) in paragraph at lines 209--211
 
  []
 
 File: bilder/Matlab_Pendulum1.png Graphic file (type png)
 <use bilder/Matlab_Pendulum1.png>
-Package pdftex.def Info: bilder/Matlab_Pendulum1.png used on input line 215.
+Package pdftex.def Info: bilder/Matlab_Pendulum1.png used on input line 222.
 (pdftex.def)             Requested size: 170.71652pt x 134.50635pt.
 
 <bilder/Matlab_Pendulum2.png, id=48, 422.32782pt x 311.66437pt>
 File: bilder/Matlab_Pendulum2.png Graphic file (type png)
 
 <use bilder/Matlab_Pendulum2.png>
-Package pdftex.def Info: bilder/Matlab_Pendulum2.png used on input line 222.
+Package pdftex.def Info: bilder/Matlab_Pendulum2.png used on input line 229.
 (pdftex.def)             Requested size: 170.71652pt x 125.9856pt.
 
-Overfull \hbox (23.99998pt too wide) in paragraph at lines 213--228
+Overfull \hbox (23.99998pt too wide) in paragraph at lines 220--235
  [][] 
  []
 
@@ -475,17 +481,17 @@ Overfull \hbox (23.99998pt too wide) in paragraph at lines 213--228
 File: bilder/OpenGL_pendulum0.png Graphic file (type png)
 
 <use bilder/OpenGL_pendulum0.png>
-Package pdftex.def Info: bilder/OpenGL_pendulum0.png used on input line 241.
+Package pdftex.def Info: bilder/OpenGL_pendulum0.png used on input line 248.
 (pdftex.def)             Requested size: 170.71652pt x 131.97572pt.
 
 <bilder/OpenGL_bounce0.png, id=50, 389.20406pt x 179.92218pt>
 File: bilder/OpenGL_bounce0.png Graphic file (type png)
 
 <use bilder/OpenGL_bounce0.png>
-Package pdftex.def Info: bilder/OpenGL_bounce0.png used on input line 248.
+Package pdftex.def Info: bilder/OpenGL_bounce0.png used on input line 255.
 (pdftex.def)             Requested size: 170.71652pt x 78.92166pt.
 
-Overfull \hbox (23.99998pt too wide) in paragraph at lines 239--253
+Overfull \hbox (23.99998pt too wide) in paragraph at lines 246--260
  [][] 
  []
 
@@ -500,60 +506,66 @@ Underfull \vbox (badness 1147) has occurred while \output is active []
 File: bilder/OpenGL_pendulum1.png Graphic file (type png)
 
 <use bilder/OpenGL_pendulum1.png>
-Package pdftex.def Info: bilder/OpenGL_pendulum1.png used on input line 262.
+Package pdftex.def Info: bilder/OpenGL_pendulum1.png used on input line 269.
 (pdftex.def)             Requested size: 170.71652pt x 128.82224pt.
 
 <bilder/OpenGL_bounce1.png, id=57, 537.50812pt x 402.75468pt>
 File: bilder/OpenGL_bounce1.png Graphic file (type png)
 
 <use bilder/OpenGL_bounce1.png>
-Package pdftex.def Info: bilder/OpenGL_bounce1.png used on input line 268.
+Package pdftex.def Info: bilder/OpenGL_bounce1.png used on input line 275.
 (pdftex.def)             Requested size: 170.71652pt x 127.91928pt.
 
-Overfull \hbox (23.99998pt too wide) in paragraph at lines 260--273
+Overfull \hbox (23.99998pt too wide) in paragraph at lines 267--280
  [][] 
  []
 
 [6 <./bilder/OpenGL_pendulum0.png> <./bilder/OpenGL_bounce0.png> <./bilder/Open
 GL_pendulum1.png> <./bilder/OpenGL_bounce1.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 292--302
+Underfull \hbox (badness 10000) in paragraph at lines 299--313
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 292--302
+Overfull \hbox (64.20224pt too wide) in paragraph at lines 299--313
+\OT1/ptm/m/n/12 Stu-dentlit-ter-atur AB, 8th edi-tion, 2008. p 156. http://tuto
+rial.math.lamar.edu/Classes/DE/EulersMethod.aspx 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 299--313
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 292--302
+Underfull \hbox (badness 10000) in paragraph at lines 299--313
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 292--302
+Underfull \hbox (badness 10000) in paragraph at lines 299--313
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 292--302
+Underfull \hbox (badness 10000) in paragraph at lines 299--313
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 292--302
+Underfull \hbox (badness 10000) in paragraph at lines 299--313
 
  []
 
 [7] [1] (./report.aux) ) 
 Here is how much of TeX's memory you used:
  4203 strings out of 493315
- 62473 string characters out of 6137904
+ 62473 string characters out of 6137905
  127734 words of memory out of 5000000
  7545 multiletter control sequences out of 15000+600000
  26555 words of font info for 68 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
- 42i,13n,40p,830b,450s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 42i,13n,40p,834b,450s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2013/texmf-dist/fonts/enc/dvips/bas
 e/8r.enc}</usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmm
 i12.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi
@@ -564,7 +576,7 @@ pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb
 usr/local/texlive/2013/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/
 texlive/2013/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/20
 13/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on report.pdf (10 pages, 416298 bytes).
+Output written on report.pdf (10 pages, 416540 bytes).
 PDF statistics:
  100 PDF objects out of 1000 (max. 8388607)
  53 compressed objects within 1 object stream

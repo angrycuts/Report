@@ -80,10 +80,10 @@ Write an abstract here!
 \setcounter{page}{1}
 \section{Introduction}
 \subsection{Background}
-Angry cuts is a project of modeling and simulating the scenario of a weight attached to a pendulum converted into a projectile in two dimensions. 
-The final concept is a simulation of several weights, each attached to a pendulum. All the ropes are cut at the same time which results in a projectile movement for all the weights. In this state the weights interact with both the walls and each other.
+Angry cuts is a project of modeling and simulating the scenario of a weight attached to a pendulum converting to a projectile in two dimensions. 
+The final concept is a simulation of several weights, each attached to a pendulum. All the ropes are being cut at the same time which results in projectile movement for all the weights. In this state the weights are interacting with both the walls and each other.
 
-Fig. 1 shows the first idea, where a pendulum was supposed to hit a tower of wooden bars. The projectile movement is inspired by the slingshot aiming towards a given target in the game {\itshape Angry birds}. The idea of releasing a weight from a pendulum is claimed from {\itshape Cut the rope}. In order to create a scene with real physics, the collisions in the scene require careful calculation of the collisions, both with static and dynamic objects. Since objects in equilibrium are difficult to handle in simulation, the idea was modified to have the weights alone acting in a room with walls and floor, and extend with several balls instead of the wooden bars. The definitive idea can be seen in Fig. 2, the scene consists of a pendulum in a room, which later will be released as a projectile.
+Figure 1 shows the first idea, where a pendulum is supposed to hit a tower of wooden bars. The projectile movement is inspired by the slingshot aiming towards a given target in the game {\itshape Angry birds}. The idea of releasing a weight from a pendulum is claimed from {\itshape Cut the rope}. In order to create a scene with real physics, the collisions in the scene require careful calculation of the collisions, both with static and dynamic objects. Since objects in equilibrium are difficult to handle in simulation, the idea was modified to have the weights alone acting in a room with walls and floor, and extend with several balls instead of the wooden bars. The definitive idea is illustrated in Fig. 2, the scene consists of a pendulum in a room, which later will be released as a projectile.
 
 
 \begin{figure}[h]
@@ -100,37 +100,44 @@ Fig. 1 shows the first idea, where a pendulum was supposed to hit a tower of woo
 
 
 \subsection{Purpose}
-The purpose of this report is to describe and follow the development of the scene with pendulums, projectiles and collisions in two dimensions. The scene uses physically correct models and formulas for collisions with static and dynamic objects. Air resistance and energy loss are also taken in consideration on the pendulum, the projectile and the collision.
+The purpose of this report is to describe and follow the development of the scene with pendulums, projectiles and collisions in two dimensions. The scene uses physically correct models and formulas for collisions with static and dynamic objects. Air resistance and energy loss are taken in consideration in the pendulum, the projectile and the collision.
 
 Another purpose with this project is to use Matlab to test and develop the model before transferring the model into C++ and OpenGL. 
 
 \section{Physical model}
 The first part of this project was to find the physical description of the first two parts of the model: the pendulum and the projectile movement. The second part was to implement collision handler and air resistance. 
 \subsection{Pendulum}
-A physical model of a nonlinear pendulum (1) is required since the system operates with large angles. \\ \\
+A physical model of a nonlinear pendulum (1) was required since the system operates with large angles. \\ \\
 $\frac{d^2\theta}{dt^2} + \frac{g}{L}*sin(\theta(t)) = 0$ \hfill (1) \\ 
+Figure 3 illustrates the model of the pendulum, $g$ represents the gravity constant, $L$ the length of the rope of the pendulum and $\theta$ is the angle of the pendulum perpendicular to the gravity.  $\frac{d^2\theta}{dt^2}$, the angular acceleration, is the relationship between the position of the weight and the angle perpendicular to gravity.
 
-\begin{figure}[h]
-\centering
-\includegraphics[height=3cm]{bilder/pendulum_2.png}
-\caption{Physical model of a pendulum}
-\end{figure}
-
-As can be seen in Fig. 3, $g$ describes the gravity constant, $L$ the length of the rope of the pendulum and $\theta$ is the angle of the pendulum perpendicular to the gravity.  $\frac{d^2\theta}{dt^2}$, the angular acceleration, is the relationship between the length of the rope and the angle perpendicular to the direction of the gravity. 
+ \begin{table}[h!]
+  \centering
+  \begin{tabular}{c  c}
+        \begin{minipage}{0.5\textwidth}
+      \includegraphics[height=60mm]{bilder/pendulum_2.png}
+      \centering
+%      \captionsetup{justification=raggedright, singlelinecheck=false}
+      \captionof{figure}{Physical model of a pendulum}
+    \end{minipage}
+    & 
+  \begin{minipage}{0.5\textwidth}
+      \includegraphics[height=60mm]{bilder/projectile_dynamics.png}
+     \centering
+      \captionsetup{justification=raggedright, singlelinecheck=false}
+      \captionof{figure}{Initial dynamics of the projectile}
+    \end{minipage} \\
+  \end{tabular}
+\end{table}
 
 \subsection{Projectile}
-The initial velocity of the projectile was retrieved from the velocity of the weight when the rope is cut. In order to transfer the movement into projectile, the velocity was split into horizontal (2) and vertical velocity (3). Besides the initial velocity from the pendulum the gravity was taken into account, which effects the vertical acceleration (4). \\ \\
-$v_x(t) = \omega(t) * cos(\theta_i(t))$ \hfill (2) \\
-$v_y(t) = \omega(t) * sin(\theta_i(t))$ \hfill (3) \\
-$a_y(t) = \alpha(t) * sin(\theta_i(t)) - g$ \hfill (4) \\
+When the rope was cut, the outcoming velocity from the pendulum movement was captured as the initial velocity for the projectile movement. In order to transfer the movement into projectile, illustrated in Fig. 4, the velocity was split into horizontal (2) and vertical velocity (3). The angle ${\theta_i}$ between the velocity vector and the horizon determined the magnitude of $v_x(t)$ and $v_y(t)$. The acceleration (4) was derived with the same method, although the vertical velocity, which also gravity was acting on. 
+ \\ \\
+$v_x(t) = v_{out}(t) * cos(\theta_i(t))$ \hfill (2) \\
+$v_y(t) = v_{out}(t) * sin(\theta_i(t))$ \hfill (3) \\
+$a_y(t) = a_{out}(t) * sin(\theta_i(t)) - g$ \hfill (4) \\
 
-\begin{figure}[h]
-\centering
-\includegraphics[height=3cm]{bilder/projectile_dynamics.png}
-\caption{Dynamics of the projectile}
-\end{figure}
 
- $\theta_i $ denotes the initial angle, $\omega$ is the angular velocity and $\alpha$ the angular acceleration of the pendulum. Fig. 4 describes the initial condition of the projectile movement.
  
 \subsection{Air resistance}
 To add air resistance to the model, the velocity should be reduced according to the angle perpendicular to the gravity. The air resistance (5) takes into account the density of air, the drag coefficient of a sphere, the cross sectional area and the velocity of the weight.\\ \\
@@ -292,6 +299,10 @@ One idea was to implement a simple model so that the balls could roll off each o
 Nonlinear pendulum: \\
 http://www.math24.net/nonlinear-pendulum.html \\\\
 Eulers explicit method: \\
+Projectile ballistics
+Physics Handbook for Science and Engineering, 
+C Nordling, J \"{O}sterman, Studentlitteratur AB, 8th edition, 2008. 
+p 156. \\
 http://tutorial.math.lamar.edu/Classes/DE/EulersMethod.aspx\\\\
 Air resistance: \\
 http://hyperphysics.phy-astr.gsu.edu/hbase/airfri.html\\\\
