@@ -1,7 +1,5 @@
 \documentclass[a4paper,12pt,twoside,english]{article}
 
-%\graphicspath{{figures/}}
-
 \usepackage{times}  
 \usepackage{amsmath}
 \usepackage{amssymb}
@@ -14,9 +12,6 @@
 \usepackage[english]{babel}
 \usepackage{subcaption}
 \usepackage{caption}
-
-\bibliography{bibsam}{}
-\bibliographystyle{plain}
 
 \headsep          0.25in
 \headheight       12pt
@@ -107,7 +102,7 @@ Another purpose with this project is to use Matlab to test and develop the model
 \section{Physical model}
 The first part of this project was to find the physical description of the first two parts of the model: the pendulum and the projectile movement. The second part was to implement collision handler and air resistance. 
 \subsection{Pendulum}
-A physical model of a nonlinear pendulum (1) was required since the system operates with large angles. \\ \\
+A physical model of a nonlinear pendulum (1) was required since the system operates with large angles. \cite{Nor:06} \cite{Hal:10} \\ \\
 $\frac{d^2\theta}{dt^2} + \frac{g}{L}*sin(\theta(t)) = 0$ \hfill (1) \\ 
 Figure 3 illustrates the model of the pendulum, $g$ represents the gravity constant, $L$ the length of the rope of the pendulum and $\theta$ is the angle of the pendulum perpendicular to the gravity.  $\frac{d^2\theta}{dt^2}$, the angular acceleration, is the relationship between the position of the weight and the angle perpendicular to gravity.
 
@@ -297,22 +292,9 @@ Another difficulty with the simulation was to handle time as a parameter. In thi
 
 One idea was to implement a simple model so that the balls could roll off each other to avoid the scenario that weights gets stuck on top of each other at low velocities. However, this was not implemented due to lack of time. 
 
-\section{References and links}
-
-Nonlinear pendulum: \\
-http://www.math24.net/nonlinear-pendulum.html \\\\
-Eulers explicit method: \\
-Projectile ballistics
-Physics Handbook for Science and Engineering, 
-C Nordling, J \"{O}sterman, Studentlitteratur AB, 8th edition, 2008. 
-p 156. \\
-http://tutorial.math.lamar.edu/Classes/DE/EulersMethod.aspx\\\\
-Air resistance: \\
-http://hyperphysics.phy-astr.gsu.edu/hbase/airfri.html\\\\
-OpenGL tutorials: \\
-http://www.opengl-tutorial.org/\\\\
-Vector-Collision: \\
-http://simonpstevens.com/Articles/VectorCollisionPhysics\\\\
+\newpage
+\bibliography{angrybib}
+\bibliographystyle{plain}
 
 \newpage
 \pagenumbering{gobble}
