@@ -132,17 +132,17 @@ $a_y(t) = a_{out}(t) * sin(\theta_i(t)) - g$ \hfill (4) \\
  
 \subsection{Air resistance}
 To add air resistance to the model, the velocity should be reduced according to the angle perpendicular to the gravity. The air resistance (5) was calculated using the density of air ${\rho}$, the drag coefficient of a sphere $c_d$, the cross sectional area {\itshape A}  of the object and the velocity $v$ of the weight.
-The air resistance was added to affect the velocity decreasingly which was performed by appending the $F_d$ to $v_y$ in (3). The values used in could be found in table 1, Appendix 1. \\ \\
+The air resistance was added to affect the velocity decreasingly which was performed by appending the $F_d$ to $v_y$ in (3). The values used  could be found in table 1, Appendix 1. \\ \\
 $F_d = \frac{1}{2}( \rho * v^2(t) * c_{d} * A)$ \hfill (5) 
 
 \subsection{Collision detection}
 \subsubsection{Collision with walls and floor}
-The second part of the model was to consider the collisions with walls and floor. This was performed by changing the direction after the collision according to the normal of the surface hit by the weight. The velocity was reduced with 50\%  to simulate an energy loss from the collision.  Equation 6 and 7 were used to simulate a collision between the west wall and our weight. In equation 7 the $x_{weight}$ represent the horizontal-position of the weight, $x_{wall}$ the horizontal-position of the west wall and r the weights radius.  \\ \\
+The second part of the model was to consider the collisions with the static objects in the room. This was performed by reflecting the direction after the collision according to the normal of the surface hit by the weight. The velocity was reduced with 50\%  to simulate an energy loss from the collision.  Equation 6 and 7 were used to simulate a collision between the left wall and our weight. In equation 7 the $x_{weight}$ represent the horizontal position of the weight, $x_{wall}$ the horizontal position of the left wall and $r$ the weights radius.  \\ \\
 $v_x= -0.5*v_x$ \hfill (6) \\
 $x_{weight} = x_{wall}+ r$ \hfill (7)
 
 \subsubsection{Collision between objects}
-The third physical part in the system was collision between two moving objects. In this project all collisions are considered elastic, which means that the objects cannot stick together in the collision.
+The third part of the physical system was collision between two moving objects. In this project all collisions are considered elastic, which means that the objects cannot stick together in the collision.
 A collision is detected when the distance between two weights is smaller than the sum of the radii. The distances can be calculated using Pythagorean theorem, illustrated in Fig. 5. 
 Since a numerical method is used to calculate the next step of the scene, the weights might overlap, step 1 Fig. 6, and due to that get stuck to each other, an unwanted phenomena. To get a more realistic simulation of the collision, the boundaries of the weights must intersect instead of overlap. Therefore, when a collision is detected, the weights are set to their previous positions, step 2 Fig. 6, and from there smaller steps in the same direction are taken until they intersect, Fig. 6. 
 
