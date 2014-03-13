@@ -141,7 +141,7 @@ $F_d = \frac{1}{2}( \rho * v^2(t) * c_{d} * A)$ \hfill (5)
 
 \subsection{Collision detection}
 \subsubsection{Collision with walls and floor}
-The second part of the model was to consider the collisions with walls and floor. This was performed by changing the direction after the collision according to the normal of the surface hit by the weight. The velocity was reduced with 50\%  to simulate an energy loss from the collision.  Equation 6 and 7 simulates a collision between the west wall and our weight. In equation 7 the $x_{weight}$ is the x-position of the weight, $x_{wall}$ the x-position of the west wall and r the weights radius.  \\ \\
+The second part of the model was to consider the collisions with walls and floor. This was performed by changing the direction after the collision according to the normal of the surface hit by the weight. The velocity was reduced with 50\%  to simulate an energy loss from the collision.  Equation 6 and 7 were used to simulate a collision between the west wall and our weight. In equation 7 the $x_{weight}$ represent the horizontal-position of the weight, $x_{wall}$ the horizontal-position of the west wall and r the weights radius.  \\ \\
 $v_x= -0.5*v_x$ \hfill (6) \\
 $x_{weight} = x_{wall}+ r$ \hfill (7)
 
@@ -192,7 +192,7 @@ $v_{1a}(t)$ and $v_{2a}(t)$ denotes the velocity of the weights, respectively, a
 \end{table}
 
 \subsection{Numerical implementation}
-In many cases it is hard to calculate equations analytical, then the equations can be calculated by numerical approximations. There are many different numerical method, some very easy and anothers complex and accurate. In this project two different was used, Euler explicit and the Runge-Kutta.
+In many cases it could be hard to calculate the equations analyticaly, a well known method to solve this is to use numerical approximations. There are many different numerical method, some very simple and others complex and more accurate. In this project two different was implemented, Euler explicit method and the Runge-Kutta 4.
 \subsubsection{Euler's explicit method}
 Euler$'$s explicit method (10) is used to calculate the x and y position of the weight and the angular velocity continuously over time of the nonlinear pendulum. \\ \\
 $y(t + h) = y(t) + f(t,y(t))*h$  \hfill (10) \\
