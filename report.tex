@@ -144,17 +144,17 @@ $x_{weight} = x_{wall}+ r$ \hfill (7)
 \subsubsection{Collision between objects}
 The third part of the physical system was to handle collision between two moving objects. In this project all collisions are considered elastic, which means that the objects cannot stick together in the collision.
 A collision is detected when the distance between two weights is smaller than the sum of the radii. The distances can be calculated using Pythagorean theorem, illustrated in Fig. 5. 
-Since a numerical method is used to calculate the next step of the scene, the weights might overlap, step 1 Fig. 6, and due to that get stuck to each other, an unwanted phenomena. To get a more realistic simulation of the collision, the boundaries of the weights must intersect instead of overlap. To handle this scenario, the  distance between the two colliding objects was calculated to find out if they overlap. If the weights overlap, following steps were performed according to Fig. 6. In the first step the normal plane and the collision plane was calculated, the second step was to move the objects to their previous positions. Step 3 was to move the objects towards each other in the direction of the normal plane, until they intersect. 
+Since a numerical method is used to calculate the next step of the scene, the weights might overlap, step 1 Fig. 6, and due to that get stuck to each other, an unwanted phenomena. To get a more realistic simulation of the collision, the boundaries of the weights must intersect instead of overlap. To handle this scenario, the  distance between the two colliding objects was calculated to find out if they overlap. If the weights overlap, following steps were performed according to Fig. 6. In the first step the normal plane and the collision plane was calculated, the second step was to move the objects to their previous positions. Step 3 was to move the objects towards each other in the direction of the normal plane, until they intersect. The normal plane can be determined as the distance between center points of the weights. The collision plane was found as the orthogonal to the normal plane, as illustrated in Fig. 7. 
 
 \begin{table}[h!]
   \centering
-  \begin{tabular}{c}
+  \begin{tabular}{c c}
         \begin{minipage}{0.5\textwidth}
       \includegraphics[height=3.1cm]{bilder/pythagora.png} 
       \centering
    \captionof{figure}{Distance between two weights\\ using the pythagorean theorem \\} 
     \end{minipage} 
- \\
+ &
   \begin{minipage}{0.5\textwidth}
       \includegraphics[height=3.2cm]{bilder/Collision_management.png}
       \centering
@@ -163,13 +163,11 @@ Since a numerical method is used to calculate the next step of the scene, the we
     \end{tabular}
 \end{table}
 
-To calculate the direction of the weights after the collision, the normal plane of the weights is used. This can be determined as the distance between center points of the weights. A collision plane is calculated by the normal plane, as illustrated in Fig. 7. 
-
-The initial velocity vectors can now be described in the normal- and the collision plane, Fig 8. These vectors can be obtained by the operation vector dot product. When these vectors are found the new velocity vector after the collision can be determined according to 8 and 9.  \\ \\
+The initial velocity vectors could now be described in the coordinate plane consisting of the normal- and the collision plane, according to Fig 8. These vectors can be obtained by the operation vector dot product. When these vectors are found the new velocity vectors after the collision can be determined according to (8) and (9).  \\ \\
 $ v_{1a}(t) = \frac{1}{m_1+m_2}*(v_1(t)(m_1-m_2) + 2m_2*v_2(t)) $ \hfill (8) \\ \\
 $ v_{2a}(t) = \frac{1}{m_1+m_2}*(v_2(t)(m_2-m_1) + 2m_1*v_1(t))$ \hfill (9) \\ \\
 
-$v_{1a}(t)$ and $v_{2a}(t)$ denotes the velocity of the weights, respectively, after the collision, $m_1$ and $m_2$ describes the masses of the colliding weights. $v_1$ and $v_2$ are the velocities of the weights before the collision. 
+$v_{1a}(t)$ and $v_{2a}(t)$ denotes the velocity of the weights, after the collision, $m_1$ and $m_2$ describes the masses of the two colliding weights. $v_1$ and $v_2$ are the velocities of the weights before the collision. 
 
 \begin{table}[h!]
   \begin{tabular}{c c}
@@ -188,14 +186,14 @@ $v_{1a}(t)$ and $v_{2a}(t)$ denotes the velocity of the weights, respectively, a
 \end{table}
 
 \subsection{Numerical implementation}
-In many cases it could be hard to calculate the equations analyticaly, a well known method to solve this is to use numerical approximations. There are many different numerical method, some very simple and others complex and more accurate. In this project two different was implemented, Euler explicit method and the Runge-Kutta 4.
+In many cases it could be hard to calculate the equations analytically, a well known method to solve this is to use numerical approximations. There are many different numerical methods, some are very simple and others complex and more accurate. In this project two different methods was implemented, Euler's explicit method and the Runge-Kutta 4.
 \subsubsection{Euler's explicit method}
-Euler$'$s explicit method (10) is used to calculate the x and y position of the weight and the angular velocity continuously over time of the nonlinear pendulum. \\ \\
+Euler$'$s explicit method (10) is used to calculate the vertical and horizontal positions of the weight and the angular velocity continuously, over time of the nonlinear pendulum. \\ \\
 $y(t + h) = y(t) + f(t,y(t))*h$  \hfill (10) \\
 
 In (10), $h$ denotes the step length, $y(t)$ is the function and $f$ describes the derivative of $y$.
 \subsubsection{Runge-Kutta method}
-Runge-Kutta\footnote{See \cite{Mat:04}} is another numerical method. Compared to Euler it gives a more stable system and can be used with a larger step size. The most common form of the Runge-Kutta is RK4, a fourth order method, which is described in (11).\\ \\
+Runge-Kutta\footnote{See \cite[p.~460, 491]{Mat:04}} is another numerical method. Compared to Euler it gives a more stable system and can be used with a larger step size. The most common form of the Runge-Kutta is RK4, a fourth order method, which is described in (11).\\ \\
 $k_1 = h*f(x_i, y_i) $ \\ \
 $k_2 = h*f(x_i + 0.5*h, y_i + 0.5*k_1) $ \\
 $k_3 = h*f(x_i + 0.5*h, y_i + 0.5*k_2)$ \hfill (11) \\
@@ -205,6 +203,8 @@ By using these four equations the next step can be calculated according to (12).
 $ y(i+1) = y(i) + \frac{1}{6}( k_1 + 2*k_2 + 2*k_3 + k_4) $ \hfill (12)
 
 \subsubsection{Implementation of numerical methods}
+
+Figure 9 and 10 illustrates the implementation of the two numerical integration methods used in this project.
 
 \begin{table}[h!]
   \centering
