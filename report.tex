@@ -53,17 +53,12 @@
 
 \newpage
 \begin{abstract}
-This report covers the development of defining a model for a physical system and to simulate the dynamics of the system. In this project the physical system consists of several weights, each attached to a pendulum, which will be released from the rope and converted into a projectile. The weights will interact with both static objects, the walls and floor of the room, and dynamic objects, other weights until they run out of energy.
-The development starts with a prestudy in MATLAB, to try the formulas and implementation before it is transfered into C++ and OpenGL. The simulation is performed by using numerical integration approximations, both Euler's explicit method and Runge-Kutta 4 is used and compared. 
+This report covers the development of defining a model for a physical system and to simulate the dynamics of it. In this project the physical system consists of several weights, each attached to a pendulum, which will be released from their rope at the same time and converted into projectiles. The weights will interact with both static objects, the walls and floor of the room, and dynamic objects, other weights inside the room until they run out of velocity. The development starts with a prestudy in MATLAB, to refine the formulas and implementation before it is transfered into C++ and OpenGL. The simulation is performed by using numerical integration approximations, both Euler's explicit method and Runge-Kutta 4 is used and evaluated. 
 \vfill
 \end{abstract}
-
-%\tableofcontents  % chapter with the table of contents
-%\addtocontents{toc}{\protect\thispagestyle{empty}}
-%\listoffigures    % chapter with the list of figures
-%\addtocontents{lof}{\protect\thispagestyle{empty}}
-%\listoftables     % chapter with the list of tables
-%\addtocontents{lot}{\protect\thispagestyle{empty}}
+\newpage
+\tableofcontents  % chapter with the table of contents
+\addtocontents{toc}{\protect\thispagestyle{empty}}
 
 %----------------------------- Body of the document
 \newpage
@@ -75,8 +70,8 @@ The development starts with a prestudy in MATLAB, to try the formulas and implem
 \setcounter{page}{1}
 \section{Introduction}
 \subsection{Background}
-Angry Cuts was created as a project to simulate a two dimensional scene of a weight attached to a pendulum which converting into a projectile. 
-The final concept is a simulation of several weights, each attached to a pendulum. All the ropes are being cut at the same time which results in a projectile movement for all the weights. In this state the weights are interacting with both the walls and each other.
+Angry Cuts is created as a project to simulate a two dimensional scene of a weight attached to a pendulum which will be converted into a projectile. 
+The final concept is a simulation of several weights. Initially is each attached to a pendulum, and later all ropes are being cut at the same time which results in a projectile movement for all the weights. In this state the weights are interacting with both the walls and each other.
 
 Figure 1 shows the first idea, where a pendulum is supposed to hit a tower of wooden bars. The projectile movement was inspired by the slingshot aiming towards a given target in the game {\itshape Angry birds}. The idea of releasing a weight from a pendulum was claimed from {\itshape Cut the rope}. In order to create a scene with real physics, the collisions in the scene required a careful calculation of the collisions, both with static and dynamic objects. Since objects in equilibrium are difficult to handle in a simulation, the idea was modified and extended with several balls instead of the wooden bars. The definitive idea is illustrated in Fig. 2, the scene consists of a pendulum in a room, which later will be released as a projectile.
 
