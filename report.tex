@@ -17,7 +17,6 @@
 \headheight       12pt
 \setlength{\topmargin}{-\headsep}
 \addtolength{\topmargin}{-\headheight}
-%\oddsidemargin      0in
 \evensidemargin 0in
 \setlength{\textwidth}{\paperwidth}
 \addtolength{\textwidth}{-2.0in}
@@ -30,7 +29,6 @@
 
 
 \title{Angry Cuts}
-%\date{2014-02-13}
 \author{Anton Alb\`{e}rt Karlstr\"{o}m, Lovisa Dahl, \\Emma Edvardsson
  and Hannes Ingelhag, \\Norrk\"{o}ping}
 
@@ -102,8 +100,9 @@ Another purpose with this project is to use Matlab to test and develop the model
 \section{Physical model}
 The first part of this project was to find the physical description of the first two parts of the model: the pendulum and the projectile movement. The second part was to implement collision handler and air resistance. 
 \subsection{Pendulum}
-A physical model of a nonlinear pendulum (1) was required since the system operates with large angles. \cite{Nor:06} \cite{Hal:10} \\ \\
-$\frac{d^2\theta}{dt^2} + \frac{g}{L}*sin(\theta(t)) = 0$ \hfill (1) \\ 
+A physical model of a nonlinear pendulum (1)\footnote{See \cite[p.~64]{Hal:10}} was required since the system operates with large angles. \cite{Nor:06} \\ \\
+$\frac{d^2\theta}{dt^2} + \frac{g}{L}*sin(\theta(t)) = 0$ \hfill (1) \\  
+
 Figure 3 illustrates the model of the pendulum, $g$ represents the gravity constant, $L$ the length of the rope of the pendulum and $\theta$ is the angle of the pendulum perpendicular to the gravity.  $\frac{d^2\theta}{dt^2}$, the angular acceleration, is the relationship between the position of the weight and the angle perpendicular to gravity.
 
  \begin{table}[h!]
@@ -117,7 +116,7 @@ Figure 3 illustrates the model of the pendulum, $g$ represents the gravity const
     \end{minipage}
     & 
   \begin{minipage}{0.5\textwidth}
-      \includegraphics[height=60mm]{bilder/projectile_dynamics.png}
+      \includegraphics[height=60mm]{bilder/projectile_dynamics_new.png}
      \centering
       \captionsetup{justification=raggedright, singlelinecheck=false}
       \captionof{figure}{Initial dynamics of the projectile}
@@ -126,7 +125,7 @@ Figure 3 illustrates the model of the pendulum, $g$ represents the gravity const
 \end{table}
 
 \subsection{Projectile}
-When the rope was cut, the outcoming velocity from the pendulum movement was captured as the initial velocity for the projectile movement. In order to transfer the movement into projectile, illustrated in Fig. 4, the velocity was split into horizontal (2) and vertical velocity (3). The angle ${\theta_i}$ between the velocity vector and the horizon determined the magnitude of $v_x(t)$ and $v_y(t)$. The acceleration (4) was derived with the same method, although the vertical velocity, which also gravity was acting on. 
+When the rope was cut, the outcoming velocity from the pendulum movement was captured as the initial velocity for the projectile movement. In order to transfer the movement into projectile, illustrated in Fig. 4, the velocity was split into horizontal (2)\footnote{See \cite[p.~396]{Hal:10}}  and vertical velocity (3). The angle ${\theta_i}$ between the velocity vector and the horizon determined the magnitude of $v_x(t)$ and $v_y(t)$. The acceleration (4) was derived with the same method, although the vertical velocity, which also gravity was acting on. 
  \\ \\
 $v_x(t) = v_{out}(t) * cos(\theta_i(t))$ \hfill (2) \\
 $v_y(t) = v_{out}(t) * sin(\theta_i(t))$ \hfill (3) \\
@@ -199,7 +198,7 @@ $y(t + h) = y(t) + f(t,y(t))*h$  \hfill (10) \\
 
 In (10), $h$ denotes the step length, $y(t)$ is the function and $f$ describes the derivative of $y$.
 \subsubsection{Runge-Kutta method}
-Runge-Kutta is another numerical method. Compared to Euler it gives a more stable system and can be used with a larger step size. The most common form of the Runge-Kutta is RK4, a fourth order method, which is described in (11).\\ \\
+Runge-Kutta\footnote{See \cite{Mat:04}} is another numerical method. Compared to Euler it gives a more stable system and can be used with a larger step size. The most common form of the Runge-Kutta is RK4, a fourth order method, which is described in (11).\\ \\
 $k_1 = h*f(x_i, y_i) $ \\ \
 $k_2 = h*f(x_i + 0.5*h, y_i + 0.5*k_1) $ \\
 $k_3 = h*f(x_i + 0.5*h, y_i + 0.5*k_2)$ \hfill (11) \\
@@ -208,10 +207,27 @@ $k_4 = h*f(x_i + h, y_i + k_3)$ \\
 By using these four equations the next step can be calculated according to (12). \\ \\
 $ y(i+1) = y(i) + \frac{1}{6}( k_1 + 2*k_2 + 2*k_3 + k_4) $ \hfill (12)
 
-\subsubsection{Implmentation of numerical methods}
+\subsubsection{Implementation of numerical methods}
 
-EulerBILD
-Runge-KuttaBILD
+\begin{table}[h!]
+  \centering
+  \begin{tabular}{c c}
+      \begin{minipage}{0.5\textwidth}
+      \vspace{1.2cm}
+      \includegraphics[width=\linewidth]{bilder/eulerCode.png}
+      \centering
+      \captionsetup{justification=centering, singlelinecheck=false}
+      \captionof{figure}{Implementation of Euler$'$s \\explicit method}
+    \end{minipage}
+    &
+  \begin{minipage}{0.5\textwidth}
+      \includegraphics[width=\linewidth]{bilder/rungeKuttaCode.png}
+    %  \centering
+      \captionsetup{justification=centering, singlelinecheck=false}
+      \captionof{figure}{Implementation of \\Runge-Kutta}
+    \end{minipage} \\
+  \end{tabular}
+\end{table}
 
 \subsection{Graphical implementation}
 \subsubsection{MATLAB}
@@ -225,7 +241,7 @@ The second part was to add interaction between two weights in the same room. Thi
         \begin{minipage}{0.5\textwidth}
       \includegraphics[width=\linewidth, width=60mm]{bilder/Matlab_Pendulum1.png}
       \centering
-%      \captionsetup{justification=raggedright, singlelinecheck=false}
+     % \captionsetup{justification=raggedright, singlelinecheck=false}
       \captionof{figure}{Plot of one pendulum}
     \end{minipage}
     & 
@@ -255,7 +271,7 @@ A possibility to change the number of weights in the scene was implemented, in s
    \end{minipage}
     & 
    \begin{minipage}{0.5\textwidth}
-   \vspace{1.8cm}
+   \vspace{1.3cm}
      \includegraphics[width=\linewidth, width=60mm]{bilder/OpenGL_bounce0.png}
      \centering
      \captionof{figure}{One projectile, first version}
@@ -264,12 +280,14 @@ A possibility to change the number of weights in the scene was implemented, in s
 \end{table}
 
 \section{Result}
-The result retrieved from this project is a program where the user could enter the desired number of pendulums in a GUI. The trigger of movement for the pendulums are their initial angle given by the user or in program. During the execution of the program the user could follow the flow of energy in the scene. The weights are positioned depending on the given number and are set to a random color. In Fig. 13 and Fig. 14 seven weights are implemented.
+The result retrieved from this project is a program where the user could enter the desired number of pendulums in a GUI, see Fig.13. The trigger of movement for the pendulums are their initial angle given by the user or in program. During the execution of the program the user could follow the flow of energy in the scene. The weights are positioned depending on the given number and are set to a random color. In Fig. 13 and Fig. 14 seven weights are implemented.
 
 \begin{table}[h!]
   \centering
    \begin{tabular}{c c}
-    \begin{minipage}{0.5\textwidth}
+    \multicolumn{2}{c}
+      {\includegraphics[width=100mm]{bilder/ConsoleAndProgram.png} } \\
+     \begin{minipage}{0.5\textwidth}
       \includegraphics[width=\linewidth, width=60mm]{bilder/OpenGL_pendulum1.png}
       \centering
       \captionof{figure}{Seven weights simulated in OpenGL}
@@ -280,9 +298,9 @@ The result retrieved from this project is a program where the user could enter t
       \centering
       \captionof{figure}{Seven bouncing weights in a room}
     \end{minipage} 
-  \end{tabular}
-\end{table}
-
+    \end{tabular}
+\end{table} 
+ 
 In the first part, the pendulums were affected by air resistance. In this scene the balls have the properties of lead and the air resistance coefficient was calculated from the circular shape. 
 
 
