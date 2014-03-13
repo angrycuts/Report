@@ -73,7 +73,7 @@ This report covers the development of defining a model for a physical system and
 Angry Cuts is created as a project to simulate a two dimensional scene of a weight attached to a pendulum which will be converted into a projectile. 
 The final concept is a simulation of several weights. Initially is each attached to a pendulum, and later all ropes are being cut at the same time which results in a projectile movement for all the weights. In this state the weights are interacting with both the walls and each other.
 
-Figure 1 shows the first idea, where a pendulum is supposed to hit a tower of wooden bars. The projectile movement was inspired by the slingshot aiming towards a given target in the game {\itshape Angry birds}. The idea of releasing a weight from a pendulum was claimed from {\itshape Cut the rope}. In order to create a scene with real physics, the collisions in the scene required a careful calculation of the collisions, both with static and dynamic objects. Since objects in equilibrium are difficult to handle in a simulation, the idea was modified and extended with several balls instead of the wooden bars. The definitive idea is illustrated in Fig. 2, the scene consists of a pendulum in a room, which later will be released as a projectile.
+Figure 1 shows the first idea, where a pendulum is supposed to hit a tower of wooden bars. The projectile movement was inspired by the slingshot aiming towards a given target in the game {\itshape Angry birds}. The idea of releasing a weight from a pendulum was claimed from {\itshape Cut the rope}. In order to create a scene with real physics, the collisions in the scene require a careful calculation of the collisions, both with static and dynamic objects. Since objects in equilibrium are difficult to handle in a simulation, the idea was modified and extended with several balls instead of the wooden bars. The definitive idea is illustrated in Fig. 2, the scene consists of a pendulum in a room, which later will be released as a projectile.
 
 
 \begin{figure}[h]
@@ -90,17 +90,17 @@ Figure 1 shows the first idea, where a pendulum is supposed to hit a tower of wo
 
 
 \subsection{Purpose}
-The purpose of this report was to describe and follow the development of the scene with pendulums, projectiles and collisions in two dimensions. The scene used physically correct models and formulas for collisions with static and dynamic objects. Air resistance and energy loss are taken into consideration in the pendulum, the projectile and the collision.
+The purpose of this report is to describe and follow the development of the scene with pendulums, projectiles and collisions in two dimensions. The scene uses physically correct models and formulas for collisions with static and dynamic objects. Air resistance and energy loss are taken into consideration in the pendulum, the projectile and the collision.
 
 Another purpose with this project is to use Matlab to test and develop the model before transferring the model into C++ and OpenGL. 
 
 \section{Physical model}
-The first part of this project was to find the physical description of the first two parts of the model: the pendulum and the projectile movement. The second part was to implement collision handler and air resistance. 
+The first part of this project was to find the physical description of the first two parts of the model: the pendulum and the projectile movement. The second part was to implement collision detector and air resistance. 
 \subsection{Pendulum}
 A physical model of a nonlinear pendulum (1)\footnote{See \cite[p.~64]{Hal:10}} was required since the system operates with large angles. \cite{Nor:06} \\ \\
 $\frac{d^2\theta}{dt^2} + \frac{g}{L}*sin(\theta(t)) = 0$ \hfill (1) \\  
 
-Figure 3 illustrates the model of the pendulum, $g$ represents the gravity constant, $L$ the length of the rope of the pendulum and $\theta$ is the angle of the pendulum perpendicular to the gravity.  $\frac{d^2\theta}{dt^2}$, the angular acceleration, is the relationship between the position of the weight and the angle perpendicular to gravity.
+Figure 3 illustrates the model of the pendulum, $g$ represents the gravity constant, $L$ the length of the rope of the pendulum and $\theta$ is the angle of the pendulum perpendicular to the gravity.  $\frac{d^2\theta}{dt^2}$ is the angular acceleration.
 
  \begin{table}[h!]
   \centering
@@ -122,7 +122,7 @@ Figure 3 illustrates the model of the pendulum, $g$ represents the gravity const
 \end{table}
 
 \subsection{Projectile}
-The outcoming velocity from the pendulum was captured as the initial velocity for the projectile movement. In order to transfer the movement into projectile, illustrated in Fig. 4, the velocity was split into horizontal (2) and vertical velocity (3). The angle ${\theta_i}$ between the velocity vector and the horizon determined the magnitude of $v_x(t)$ and $v_y(t)$. The acceleration (4) was derived with the same method, although the vertical velocity, which also gravity was acting on. 
+The outcoming velocity from the pendulum was captured as the initial velocity for the projectile movement. In order to transfer the movement into projectile, illustrated in Fig. 4, the velocity was split into horizontal (2) and vertical velocity (3). The angle ${\theta_i}$ between the velocity vector and the horizontal axis determined the magnitude of $v_x(t)$ and $v_y(t)$. The acceleration (4) was also derived from this method and the vertical acceleration was affected by gravity. 
  \\ \\
 $v_x(t) = v_{out}(t) * cos(\theta_i(t))$ \hfill (2) \\
 $v_y(t) = v_{out}(t) * sin(\theta_i(t))$ \hfill (3) \\
@@ -132,7 +132,7 @@ $a_y(t) = a_{out}(t) * sin(\theta_i(t)) - g$ \hfill (4) \\
  
 \subsection{Air resistance}
 To add air resistance to the model, the velocity should be reduced according to the angle perpendicular to the gravity. The air resistance (5) was calculated using the density of air ${\rho}$, the drag coefficient of a sphere $c_d$, the cross sectional area {\itshape A}  of the object and the velocity $v$ of the weight.
-The air resistance was added to affect the velocity decreasingly which was performed by appending the $F_d$ to $v_y$ in (3).\\ \\
+The air resistance was added to affect the velocity decreasingly which was performed by appending the $F_d$ to $v_y$ in (3). The values used in could be found in table 1, Appendix 1. \\ \\
 $F_d = \frac{1}{2}( \rho * v^2(t) * c_{d} * A)$ \hfill (5) 
 
 \subsection{Collision detection}
@@ -226,6 +226,7 @@ $ y(i+1) = y(i) + \frac{1}{6}( k_1 + 2*k_2 + 2*k_3 + k_4) $ \hfill (12)
   \end{tabular}
 \end{table}
 
+\section{Simulation}
 \subsection{Graphical implementation}
 \subsubsection{MATLAB}
 A physical model of one weight was defined and implemented in MATLAB for a simulation test. Constants for the calculations can be found in \textit{Appendix 1}. This was made iteratively, starting with the pendulum alone followed by adding the projectile movement and the last step with collision detection with static objects. The final simulation consisted of a weight attached to a pendulum, see Fig. 9, which was released after a given time and converted into a projectile. The weight would bounce on the walls and the ground until the added energy loss caused it to stop moving. 
