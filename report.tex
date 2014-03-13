@@ -1,7 +1,5 @@
 \documentclass[a4paper,12pt,twoside,english]{article}
 
-%\graphicspath{{figures/}}
-
 \usepackage{times}  
 \usepackage{amsmath}
 \usepackage{amssymb}
@@ -14,9 +12,6 @@
 \usepackage[english]{babel}
 \usepackage{subcaption}
 \usepackage{caption}
-
-\bibliography{bibsam}{}
-\bibliographystyle{plain}
 
 \headsep          0.25in
 \headheight       12pt
@@ -108,7 +103,7 @@ Another purpose with this project is to use Matlab to test and develop the model
 \section{Physical model}
 The first part of this project was to find the physical description of the first two parts of the model: the pendulum and the projectile movement. The second part was to implement collision handler and air resistance. 
 \subsection{Pendulum}
-A physical model of a nonlinear pendulum (1) was required since the system operates with large angles. \\ \\
+A physical model of a nonlinear pendulum (1) was required since the system operates with large angles. \cite{Nor:06} \cite{Hal:10} \\ \\
 $\frac{d^2\theta}{dt^2} + \frac{g}{L}*sin(\theta(t)) = 0$ \hfill (1) \\ 
 Figure 3 illustrates the model of the pendulum, $g$ represents the gravity constant, $L$ the length of the rope of the pendulum and $\theta$ is the angle of the pendulum perpendicular to the gravity.  $\frac{d^2\theta}{dt^2}$, the angular acceleration, is the relationship between the position of the weight and the angle perpendicular to gravity.
 
@@ -147,7 +142,9 @@ $F_d = \frac{1}{2}( \rho * v^2(t) * c_{d} * A)$ \hfill (5)
 
 \subsection{Collision detection}
 \subsubsection{Collision with walls and floor}
-The second part of the model was to consider the collisions with walls and floor. This was performed by changing the direction after the collision according to the normal of the surface hit by the weight. The velocity was reduced with 20\%  to simulate an energy loss from the collision.
+The second part of the model was to consider the collisions with walls and floor. This was performed by changing the direction after the collision according to the normal of the surface hit by the weight. The velocity was reduced with 50\%  to simulate an energy loss from the collision.  Equation 6 and 7 were used to simulate a collision between the west wall and our weight. In equation 7 the $x_{weight}$ represent the horizontal-position of the weight, $x_{wall}$ the horizontal-position of the west wall and r the weights radius.  \\ \\
+$v_x= -0.5*v_x$ \hfill (6) \\
+$x_{weight} = x_{wall}+ r$ \hfill (7)
 
 \subsubsection{Collision between objects}
 The third physical part in the system was collision between two moving objects. In this project all collisions are considered elastic, which means that the objects cannot stick together in the collision.
@@ -173,9 +170,9 @@ Since a numerical method is used to calculate the next step of the scene, the we
 
 To calculate the direction of the weights after the collision, the normal plane of the weights is used. This can be determined as the distance between center points of the weights. A collision plane is calculated by the normal plane, as illustrated in Fig. 7. 
 
-The initial velocity vectors can now be described in the normal- and the collision plane, Fig 8. These vectors can be obtained by the operation vector dot product. When these vectors are found the new velocity vector after the collision can be determined according to 6 and 7.  \\ \\
-$ v_{1a}(t) = \frac{1}{m_1+m_2}*(v_1(t)(m_1-m_2) + 2m_2*v_2(t)) $ \hfill (6) \\ \\
-$ v_{2a}(t) = \frac{1}{m_1+m_2}*(v_2(t)(m_2-m_1) + 2m_1*v_1(t))$ \hfill (7) \\ \\
+The initial velocity vectors can now be described in the normal- and the collision plane, Fig 8. These vectors can be obtained by the operation vector dot product. When these vectors are found the new velocity vector after the collision can be determined according to 8 and 9.  \\ \\
+$ v_{1a}(t) = \frac{1}{m_1+m_2}*(v_1(t)(m_1-m_2) + 2m_2*v_2(t)) $ \hfill (8) \\ \\
+$ v_{2a}(t) = \frac{1}{m_1+m_2}*(v_2(t)(m_2-m_1) + 2m_1*v_1(t))$ \hfill (9) \\ \\
 
 $v_{1a}(t)$ and $v_{2a}(t)$ denotes the velocity of the weights, respectively, after the collision, $m_1$ and $m_2$ describes the masses of the colliding weights. $v_1$ and $v_2$ are the velocities of the weights before the collision. 
 
@@ -196,20 +193,26 @@ $v_{1a}(t)$ and $v_{2a}(t)$ denotes the velocity of the weights, respectively, a
 \end{table}
 
 \subsection{Numerical implementation}
+In many cases it could be hard to calculate the equations analyticaly, a well known method to solve this is to use numerical approximations. There are many different numerical method, some very simple and others complex and more accurate. In this project two different was implemented, Euler explicit method and the Runge-Kutta 4.
 \subsubsection{Euler's explicit method}
-Euler$'$s explicit method (8) is used to calculate the x and y position of the weight and the angular velocity continuously over time of the nonlinear pendulum. \\ \\
-$y(t + h) = y(t) + f(t,y(t))*h$  \hfill (8) \\
+Euler$'$s explicit method (10) is used to calculate the x and y position of the weight and the angular velocity continuously over time of the nonlinear pendulum. \\ \\
+$y(t + h) = y(t) + f(t,y(t))*h$  \hfill (10) \\
 
-In (8), $h$ denotes the step length, $y(t)$ is the function and $f$ describes the derivative of $y$.
+In (10), $h$ denotes the step length, $y(t)$ is the function and $f$ describes the derivative of $y$.
 \subsubsection{Runge-Kutta method}
-Runge-Kutta is another numerical method. Compared to Euler it gives a more stable system and can be used with a larger step size. The most common form of the Runge-Kutta is RK4, a fourth order method, which is described in (9).\\ \\
+Runge-Kutta is another numerical method. Compared to Euler it gives a more stable system and can be used with a larger step size. The most common form of the Runge-Kutta is RK4, a fourth order method, which is described in (11).\\ \\
 $k_1 = h*f(x_i, y_i) $ \\ \
 $k_2 = h*f(x_i + 0.5*h, y_i + 0.5*k_1) $ \\
-$k_3 = h*f(x_i + 0.5*h, y_i + 0.5*k_2)$ \hfill (9) \\
+$k_3 = h*f(x_i + 0.5*h, y_i + 0.5*k_2)$ \hfill (11) \\
 $k_4 = h*f(x_i + h, y_i + k_3)$ \\
 
-By using these four equations the next step can be calculated according to (10). \\ \\
-$ y(i+1) = y(i) + \frac{1}{6}( k_1 + 2*k_2 + 2*k_3 + k_4) $ \hfill (10)
+By using these four equations the next step can be calculated according to (12). \\ \\
+$ y(i+1) = y(i) + \frac{1}{6}( k_1 + 2*k_2 + 2*k_3 + k_4) $ \hfill (12)
+
+\subsubsection{Implmentation of numerical methods}
+
+EulerBILD
+Runge-KuttaBILD
 
 \subsection{Graphical implementation}
 \subsubsection{MATLAB}
@@ -296,22 +299,9 @@ Another difficulty with the simulation was to handle time as a parameter. In thi
 
 One idea was to implement a simple model so that the balls could roll off each other to avoid the scenario that weights gets stuck on top of each other at low velocities. However, this was not implemented due to lack of time. 
 
-\section{References and links}
-
-Nonlinear pendulum: \\
-http://www.math24.net/nonlinear-pendulum.html \\\\
-Eulers explicit method: \\
-Projectile ballistics
-Physics Handbook for Science and Engineering, 
-C Nordling, J \"{O}sterman, Studentlitteratur AB, 8th edition, 2008. 
-p 156. \\
-http://tutorial.math.lamar.edu/Classes/DE/EulersMethod.aspx\\\\
-Air resistance: \\
-http://hyperphysics.phy-astr.gsu.edu/hbase/airfri.html\\\\
-OpenGL tutorials: \\
-http://www.opengl-tutorial.org/\\\\
-Vector-Collision: \\
-http://simonpstevens.com/Articles/VectorCollisionPhysics\\\\
+\newpage
+\bibliography{angrybib}
+\bibliographystyle{plain}
 
 \newpage
 \pagenumbering{gobble}
