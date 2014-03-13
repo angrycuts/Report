@@ -34,6 +34,7 @@
 \addtolength{\textheight}{\topskip}
 
 
+
 \title{Angry Cuts}
 %\date{2014-02-13}
 \author{Anton Alb\`{e}rt Karlstr\"{o}m, Lovisa Dahl, \\Emma Edvardsson
@@ -80,10 +81,10 @@ Write an abstract here!
 \setcounter{page}{1}
 \section{Introduction}
 \subsection{Background}
-Angry cuts is a project of modeling and simulating the scenario of a weight attached to a pendulum converting to a projectile in two dimensions. 
-The final concept is a simulation of several weights, each attached to a pendulum. All the ropes are being cut at the same time which results in projectile movement for all the weights. In this state the weights are interacting with both the walls and each other.
+Angry Cuts was created as a project to simulate a two dimensional scene of a weight attached to a pendulum which converting into a projectile. 
+The final concept is a simulation of several weights, each attached to a pendulum. All the ropes are being cut at the same time which results in a projectile movement for all the weights. In this state the weights are interacting with both the walls and each other.
 
-Figure 1 shows the first idea, where a pendulum is supposed to hit a tower of wooden bars. The projectile movement is inspired by the slingshot aiming towards a given target in the game {\itshape Angry birds}. The idea of releasing a weight from a pendulum is claimed from {\itshape Cut the rope}. In order to create a scene with real physics, the collisions in the scene require careful calculation of the collisions, both with static and dynamic objects. Since objects in equilibrium are difficult to handle in simulation, the idea was modified to have the weights alone acting in a room with walls and floor, and extend with several balls instead of the wooden bars. The definitive idea is illustrated in Fig. 2, the scene consists of a pendulum in a room, which later will be released as a projectile.
+Figure 1 shows the first idea, where a pendulum is supposed to hit a tower of wooden bars. The projectile movement was inspired by the slingshot aiming towards a given target in the game {\itshape Angry birds}. The idea of releasing a weight from a pendulum was claimed from {\itshape Cut the rope}. In order to create a scene with real physics, the collisions in the scene required a careful calculation of the collisions, both with static and dynamic objects. Since objects in equilibrium are difficult to handle in a simulation, the idea was modified and extended with several balls instead of the wooden bars. The definitive idea is illustrated in Fig. 2, the scene consists of a pendulum in a room, which later will be released as a projectile.
 
 
 \begin{figure}[h]
@@ -100,7 +101,7 @@ Figure 1 shows the first idea, where a pendulum is supposed to hit a tower of wo
 
 
 \subsection{Purpose}
-The purpose of this report is to describe and follow the development of the scene with pendulums, projectiles and collisions in two dimensions. The scene uses physically correct models and formulas for collisions with static and dynamic objects. Air resistance and energy loss are taken in consideration in the pendulum, the projectile and the collision.
+The purpose of this report was to describe and follow the development of the scene with pendulums, projectiles and collisions in two dimensions. The scene used physically correct models and formulas for collisions with static and dynamic objects. Air resistance and energy loss are taken into consideration in the pendulum, the projectile and the collision.
 
 Another purpose with this project is to use Matlab to test and develop the model before transferring the model into C++ and OpenGL. 
 
@@ -131,7 +132,7 @@ Figure 3 illustrates the model of the pendulum, $g$ represents the gravity const
 \end{table}
 
 \subsection{Projectile}
-When the rope was cut, the outcoming velocity from the pendulum movement was captured as the initial velocity for the projectile movement. In order to transfer the movement into projectile, illustrated in Fig. 4, the velocity was split into horizontal (2) and vertical velocity (3). The angle ${\theta_i}$ between the velocity vector and the horizon determined the magnitude of $v_x(t)$ and $v_y(t)$. The acceleration (4) was derived with the same method, although the vertical velocity, which also gravity was acting on. 
+The outcoming velocity from the pendulum was captured as the initial velocity for the projectile movement. In order to transfer the movement into projectile, illustrated in Fig. 4, the velocity was split into horizontal (2) and vertical velocity (3). The angle ${\theta_i}$ between the velocity vector and the horizon determined the magnitude of $v_x(t)$ and $v_y(t)$. The acceleration (4) was derived with the same method, although the vertical velocity, which also gravity was acting on. 
  \\ \\
 $v_x(t) = v_{out}(t) * cos(\theta_i(t))$ \hfill (2) \\
 $v_y(t) = v_{out}(t) * sin(\theta_i(t))$ \hfill (3) \\
@@ -140,7 +141,7 @@ $a_y(t) = a_{out}(t) * sin(\theta_i(t)) - g$ \hfill (4) \\
 
  
 \subsection{Air resistance}
-To add air resistance to the model, the velocity should be reduced according to the angle perpendicular to the gravity. The air resistance (5) was calculated using the density of air ${\rho}$, the drag coefficient of a sphere $c_d$, the cross sectional area {\itshape A}  of the object and the velocity, $v$ of the weight.
+To add air resistance to the model, the velocity should be reduced according to the angle perpendicular to the gravity. The air resistance (5) was calculated using the density of air ${\rho}$, the drag coefficient of a sphere $c_d$, the cross sectional area {\itshape A}  of the object and the velocity $v$ of the weight.
 The air resistance was added to affect the velocity decreasingly which was performed by appending the $F_d$ to $v_y$ in (3).\\ \\
 $F_d = \frac{1}{2}( \rho * v^2(t) * c_{d} * A)$ \hfill (5) 
 
@@ -240,7 +241,7 @@ The second part was to add interaction between two weights in the same room. Thi
 \subsubsection{OpenGL 3.3}
 To improve the graphical representation of the model the code was converted to C++ and OpenGL. The software used in the project were Sublime Text 2, Visual Studio and CMake. 
 
-A possibility to change the number of weights in the scene was implemented, in such way that the pendulums were drawn with even intervals according to the number of weights. Fig. 11 and Fig. 12 presents the scene with three weights in OpenGL. The constants used for these figures are the same as previous.
+A possibility to change the number of weights in the scene was implemented, the pendulums were drawn with even intervals according to the number of weights. Fig. 11 and Fig. 12 presents the scene with three weights in OpenGL. The constants used for these figures are the same as previous.
 
 \begin{table}[h!]
   \centering
@@ -261,7 +262,7 @@ A possibility to change the number of weights in the scene was implemented, in s
 \end{table}
 
 \section{Result}
-The result retrieved from this project is a program where the user could enter the desired number of pendulums in a GUI. The trigger of movement for the pendulums are their initial angle given by the user or in program. During the execution of the program the user could follow the flow of energy in the scene. The weights are positioned depending on the given number and are set to a random color. In Fig. 13 and Fig. 14 seven weights are implemented.
+The result retrieved from this project is a program where the user could enter the desired number of pendulums in a GUI. The trigger of movement for the pendulums are their initial angle given by the user or the program. During the execution of the program the user could follow the flow of energy in the scene. The weights are positioned depending on the given number of weights and are set to a random color. In Fig. 13 and Fig. 14 seven weights are implemented.
 
 \begin{table}[h!]
   \centering
@@ -287,9 +288,9 @@ In the first part, the pendulums were affected by air resistance. In this scene 
 The implementation of the physics into code started as soon as the idea was found which made this project robust and stable from the beginning.
 The work was most of the time divided into groups of two and these pairs implemented and discussed code together which made the work hours efficient.
 
-During the conversion to C++, a couple of obstacles in terms of different operative systems and the different versions of OpenGL caused troubles. This took much time and focus from the project itself. OpenGL 3.3 has some new implementations when drawing objects, different from what we have used before.
+During the conversion to C++, a couple of obstacles in terms of different operative systems and the different versions of OpenGL caused problems. These problems took much time and focus from the project itself. OpenGL 3.3 has some new implementations when drawing objects, different from what we have used before, which was the biggest problem.
 
-The Euler explicit method was first used as the numerical integration method. However, Euler gives a larger numerical error which grows for each iteration. This is noticeable when using a larger step size since the simulation gets unstable. To minimize this problem the Runge-Kutta 4 method was implemented, which represent a more accurate model. This method considers four following steps, each dependent on the previous one, from which a weighted average representing the next step of the slope could be calculated. 
+The Euler explicit method was first used as the numerical integration method. However, Euler gives a larger numerical error which grows for each iteration. This is noticeable when using a larger step size since the simulation gets unstable. To minimize this problem the Runge-Kutta 4 method was implemented, which represents a more accurate model. This method considers four following steps, each dependent on the previous one, from which a weighted average representing the next step of the slope could be calculated. 
 
 Another difficulty with the simulation was to handle time as a parameter. In this project the simulation was performed as fast as the current computer could compute the code, which brought troubles with different computers. Some computers calculated the code too fast and in that case the simulation could look unrealistic.
 
