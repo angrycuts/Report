@@ -197,6 +197,7 @@ $v_{1a}(t)$ and $v_{2a}(t)$ denotes the velocity of the weights, respectively, a
 \end{table}
 
 \subsection{Numerical implementation}
+In many cases it is hard to calculate equations analytical, then the equations can be calculated by numerical approximations. There are many different numerical method, some very easy and anothers complex and accurate. In this project two different was used, Euler explicit and the Runge-Kutta.
 \subsubsection{Euler's explicit method}
 Euler$'$s explicit method (10) is used to calculate the x and y position of the weight and the angular velocity continuously over time of the nonlinear pendulum. \\ \\
 $y(t + h) = y(t) + f(t,y(t))*h$  \hfill (10) \\
@@ -211,6 +212,11 @@ $k_4 = h*f(x_i + h, y_i + k_3)$ \\
 
 By using these four equations the next step can be calculated according to (12). \\ \\
 $ y(i+1) = y(i) + \frac{1}{6}( k_1 + 2*k_2 + 2*k_3 + k_4) $ \hfill (12)
+
+\subsubsection{Implmentation of numerical methods}
+
+EulerBILD
+Runge-KuttaBILD
 
 \subsection{Graphical implementation}
 \subsubsection{MATLAB}
