@@ -32,7 +32,7 @@
 \title{Angry Cuts}
 %\date{2014-02-13}
 \author{Anton Alb\`{e}rt Karlstr\"{o}m, Lovisa Dahl, \\Emma Edvardsson
- and Hannes Ingelhag, \\Norrk\"{o}ping}
+ and Hannes Ingelhag \\Norrk\"{o}ping}
 
 %Gör så att alla formler blir lite större
 \everymath{\displaystyle}
@@ -54,7 +54,8 @@
 
 \newpage
 \begin{abstract}
-Write an abstract here!
+This report covers the development of defining a model for a physical system and to simulate the dynamics of the system. In this project the physical system consists of several weights, each attached to a pendulum, which will be released from the rope a converted into a projectile. The weights will interact with both static objects, the walls and floor of the room, and dynamic objects, other weights until they run out of energy.
+The development starts with a prestudy in MATLAB, to try the formulas and implementation before it is transfered into C++ and OpenGL. The simulation is performed by using numerical integration approximations, both Euler's explicit method and Runge-Kutta 4 is used and compared. 
 \vfill
 \end{abstract}
 
@@ -117,7 +118,7 @@ Figure 3 illustrates the model of the pendulum, $g$ represents the gravity const
     \end{minipage}
     & 
   \begin{minipage}{0.5\textwidth}
-      \includegraphics[height=60mm]{bilder/projectile_dynamics.png}
+      \includegraphics[height=60mm]{bilder/projectile_dynamics_new.png}
      \centering
       \captionsetup{justification=raggedright, singlelinecheck=false}
       \captionof{figure}{Initial dynamics of the projectile}
@@ -282,8 +283,7 @@ The result retrieved from this project is a program where the user could enter t
     \end{minipage} 
   \end{tabular}
 \end{table}
-
-In the first part, the pendulums were affected by air resistance. In this scene the balls have the properties of lead and the air resistance coefficient was calculated from the circular shape. 
+In the first part, the pendulums were given an initial angle and were affected by air resistance. In this scene the balls have the properties of lead,, and the air resistance coefficient was calculated from the circular shape.  Values of the constants could be found in table 1, Appendix 1.
 
 
 \section{Discussion}
