@@ -142,7 +142,7 @@ $v_x= -0.5*v_x$ \hfill (6) \\
 $x_{weight} = x_{wall}+ r$ \hfill (7)
 
 \subsubsection{Collision between objects}
-The third part of the physical system was collision between two moving objects. In this project all collisions are considered elastic, which means that the objects cannot stick together in the collision.
+The third part of the physical system was to handle collision between two moving objects. In this project all collisions are considered elastic, which means that the objects cannot stick together in the collision.
 A collision is detected when the distance between two weights is smaller than the sum of the radii. The distances can be calculated using Pythagorean theorem, illustrated in Fig. 5. 
 Since a numerical method is used to calculate the next step of the scene, the weights might overlap, step 1 Fig. 6, and due to that get stuck to each other, an unwanted phenomena. To get a more realistic simulation of the collision, the boundaries of the weights must intersect instead of overlap. To handle this scenario, the  distance between the two colliding objects was calculated to find out if they overlap. If the weights overlap, following steps were performed according to Fig. 6. In the first step the normal plane and the collision plane was calculated, the second step was to move the objects to their previous positions. Step 3 was to move the objects towards each other in the direction of the normal plane, until they intersect. 
 
