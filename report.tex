@@ -278,7 +278,7 @@ A possibility to change the number of weights in the scene was implemented, the 
 \end{table}
 
 \section{Result}
-The result retrieved from this project is a program where the user could enter the desired number of pendulums in a GUI, see Fig.15. The trigger of movement for the pendulums are their initial angle given by the user or in program. During the execution of the program the user could follow the flow of energy in the scene. The weights are positioned depending on the given number and are set to a random color. In Fig. 16 and Fig. 17 seven weights are implemented.
+The result retrieved from this project was a program where the user could enter the desired number of pendulums in a GUI, see Fig.15. The trigger of movement for the pendulums were their initial angle given by the user or in the program code. During the execution of the program the user could follow the flow of energy in the scene. The weights were positioned depending on the given number and were set to a random color. In Fig. 16 and Fig. 17 seven weights were implemented.
 
 \begin{table}[h!]
   \centering
@@ -307,12 +307,12 @@ In the first part, the pendulums were given an initial angle and were affected b
 
 
 \section{Discussion}
-The implementation of the physics into code started as soon as the idea was found which made this project robust and stable from the beginning.
-The work was most of the time divided into groups of two and these pairs implemented and discussed code together which made the work hours efficient.
+The implementation of the physical equations into MATLAB started as soon as the idea was found.
+The work was most of the time divided into groups of two and these pairs implemented and discussed code together which made the working hours efficient.
 
-During the conversion to C++, a couple of obstacles in terms of different operative systems and the different versions of OpenGL caused problems. These problems took much time and focus from the project itself. OpenGL 3.3 has some new implementations when drawing objects, different from what we have used before, which was the biggest problem.
+During the conversion to C++, a couple of obstacles in terms of different operative systems and the different versions of OpenGL caused problems. These problems took much time and focus from the project itself. OpenGL 3.3 has some new implementations for drawing objects, different from what we have used before, which was the biggest problem.
 
-The Euler explicit method was first used as the numerical integration method. However, Euler gives a larger numerical error which grows for each iteration. This is noticeable when using a larger step size since the simulation gets unstable. To minimize this problem the Runge-Kutta 4 method was implemented, which represents a more accurate model. This method considers four following steps, each dependent on the previous one, from which a weighted average representing the next step of the slope could be calculated. 
+The Euler's explicit method was used as the first numerical integration method. However, Euler gave a larger numerical error which grows for each iteration. This was noticeable since the simulation got unstable when using a large step size. To minimize this problem the Runge-Kutta 4 method was implemented, which represents a more accurate model. This method considers four coherent steps, each dependent on the previous one, from which a weighted average representing the next step of the slope could be calculated. 
 
 Another difficulty with the simulation was to handle time as a parameter. In this project the simulation was performed as fast as the current computer could compute the code, which brought troubles with different computers. Some computers calculated the code too fast and in that case the simulation could look unrealistic.
 
