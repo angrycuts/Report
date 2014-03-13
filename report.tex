@@ -229,7 +229,7 @@ Figure 9 and 10 illustrates the implementation of the two numerical integration 
 \section{Simulation}
 \subsection{Graphical implementation}
 \subsubsection{MATLAB}
-A physical model of one weight was defined and implemented in MATLAB for a simulation test. Constants for the calculations can be found in \textit{Appendix 1}. This was made iteratively, starting with the pendulum alone followed by adding the projectile movement and the last step with collision detection with static objects. The final simulation consisted of a weight attached to a pendulum, see Fig. 11, which was released after a given time and converted into a projectile. The weight would bounce on the walls and the ground until the added energy loss caused it to stop moving. 
+A physical model of one weight was defined and implemented in MATLAB for a simulation test. Constants for the calculations can be found in \textit{Appendix 1}. This was made iteratively, starting with the pendulum alone followed by adding the projectile movement and the last step with collision detection with static objects. The final simulation consisted of a weight attached to a pendulum, see Fig. 11, which was released after a given time and converted into a projectile. The weight would bounce on the walls and the ground until the energy loss caused it to stop moving. 
 
 The second part was to add interaction between two weights in the same room. This step required a fully working model of one weight and an additional collision management to handle collision between two dynamic objects. Fig. 12 shows two weights of different radii.
 
@@ -262,32 +262,37 @@ A possibility to change the number of weights in the scene was implemented, the 
 \begin{table}[h!]
   \centering
    \begin{tabular}{c c}
+  \begin{minipage}{0.5\textwidth}
+   \vspace{1.3cm}
+     \includegraphics[width=\linewidth, width=60mm]{bilder/OpenGL_bounce0.png}
+     \centering
+     \captionof{figure}{One projectile, first version}
+    \end{minipage}
+    &
       \begin{minipage}{0.5\textwidth}
       \includegraphics[width=\linewidth, width=60mm]{bilder/OpenGL_pendulum0.png}
       \centering
       \captionof{figure}{Simulation of three pendulums, first version}
    \end{minipage}
-    & 
-   \begin{minipage}{0.5\textwidth}
-   \vspace{1.3cm}
-     \includegraphics[width=\linewidth, width=60mm]{bilder/OpenGL_bounce0.png}
-     \centering
-     \captionof{figure}{One projectile, first version}
-    \end{minipage} \\
+    \\
   \end{tabular}
 \end{table}
 
 \section{Result}
+<<<<<<< HEAD
 The result retrieved from this project was a program where the user could enter the desired number of pendulums in a GUI, see Fig.15. The trigger of movement for the pendulums were their initial angle given by the user or in the program code. During the execution of the program the user could follow the flow of energy in the scene. The weights were positioned depending on the given number and were set to a random color. In Fig. 16 and Fig. 17 seven weights were implemented.
+=======
+The result retrieved from this project is a program where the user could enter the desired number of pendulums in an interface, see Fig.15. The trigger of movement for the pendulums are their initial angle given by the user or in program. During the execution of the program the user could follow the flow of energy in the scene. The weights are positioned depending on the given number and are set to a random color. In Fig. 16 and Fig. 17 seven weights are implemented.
+>>>>>>> 4950616b4c164f5e0aaefe60adb08efd487652ed
 
 \begin{table}[h!]
   \centering
    \begin{tabular}{c c}
     \multicolumn{2}{c}
       {\begin{minipage}{0.5\textwidth}
-      \includegraphics[width=\linewidth, width=60mm]{bilder/ConsoleAndProgram.png}
+      \includegraphics[width=\linewidth]{bilder/ConsoleAndProgram.png}
       \centering
-      \captionof{figure}{Seven weights simulated in OpenGL}
+      \captionof{figure}{User enters values in the command prompt}
     \end{minipage} } 
       \\
      \begin{minipage}{0.5\textwidth}
@@ -303,7 +308,7 @@ The result retrieved from this project was a program where the user could enter 
     \end{minipage} 
   \end{tabular}
 \end{table}
-In the first part, the pendulums were given an initial angle and were affected by air resistance. In this scene the balls have the properties of lead,, and the air resistance coefficient was calculated from the circular shape.  Values of the constants could be found in table 1, Appendix 1.
+In the first part, the pendulums were given an initial angle and were affected by air resistance. In this scene the balls have the properties of lead, and the air resistance coefficient was calculated from the circular shape.  Values of the constants could be found in table 1, Appendix 1.
 
 
 \section{Discussion}
